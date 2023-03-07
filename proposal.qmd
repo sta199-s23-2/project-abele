@@ -1,7 +1,7 @@
 ---
 title: "Project title"
 subtitle: "Proposal"
-format: html
+format: pdf
 editor: visual
 ---
 
@@ -18,32 +18,59 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
+    The source of the data is from the CORGIS Dataset Project.
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    The data was originally collected by Dennis Kafura on June 27th, 2019 from patient records of various hospitals throughout the United States.
+
 -   Write a brief description of the observations.
+
+    The information provides rates of cancer deaths in each state. These rates are organized based on age, sex, and race. The rates also are categorized for three specific types of cancer: breast cancer, lung cancer, and colorectal cancer.
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+    What is the relationship between race and mortality rate and cancer types?
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+    -   Hypotheses:
+
+        -   Different racial groups have different mortality rates for the same type of cancer.
+
+        -   The impact of race and cancer type on mortality rates is influenced by other factors such as age and gender.
+
+-   Research topic:
+
+    -   This research topic aims to explore the relationship between race, cancer type, and mortality among cancer patients. The first hypothesis suggests that mortality rates for the same type of cancer vary across different racial groups. For example, Black and Hispanic cancer patients may appear to have higher mortality rates for a certain type of cancer compared to White patients. The second hypothesis suggests that there are other factors such as age and gender that can impact the relationship between race, cancer type, and mortality rates. This research could potentially provide insights into how to improve cancer screening, diagnosis, and treatment strategies for different racial groups and different types of cancer. 
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+    -   The types of variables in our research question are categorical.
+
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    Saldana-Ruiz, Nallely, et al. "Fundamental causes of colorectal cancer mortality in the United States: understanding the importance of socioeconomic status in creating inequality in mortality." *American journal of public health* 103.1 (2013): 99-104.
+
 -   Provide a one paragraph summary about the article.
 
+    The goal of this study is to determine the creation of health disparities in colorectal cancer mortality in the United States from 1968 to 2005. Negative binomial regression was used to analyze trends based on county for colorectal cancer mortality rates, adjusted for ender, race, and age for individuals above 35 years old. The results reveal that prior to 1980, there was a stable gradient in colorectal cancer morality, with higher SES counties at greater risk. However, beginning in 1980, this gradient began to narrow and then reversed as people living in higher SES counties experiences greater reductions in colorectal cancer mortality rates than those in lower SES countries. This supports the fundamental cause hypothesis, suggesting that social and economic resources are important factors in influencing mortality rates once knowledge about prevention and treatment of colorectal cancer became available.
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+    -   This research question builds on the research given because it also explores the relationship between other cancer types-- lung cancer and breast cancer-- as well as colorectal cancer.
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-1
+cancer <- read_csv("data/cancer.csv")
 
-# add code here
+glimpse(cancer)
 ```
 
 # Data 2
@@ -52,32 +79,58 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
+    -   This data is sourced from the CORGIS Dataset Project and was uploaded by Dennis Kafura, Joung Min Choi, and Bo Guan.
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    -   This dataset was originally collected by the Washington Post over the span of 2015-2022. They assembled the dataset by manually culling local news reports, amassing information from social media and law enforcement websites, and monitoring independent databases such as Fatal Encounters. 
+
 -   Write a brief description of the observations.
+
+    -   The dataset contains observations about instances of police shootings in the US. The variables are mostly focused on the details of the situation and people involved in the shooting, such as the date and location of the shooting and whether the victim was armed or experiencing a mental health crisis.
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+    -   Is there a relationship between the race of the person shot and existence of a perceived threat and presence of mental illness during police shootings in the United States?
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+    -   A recent uptick in police brutality and racially motivated police action has sparked outrage nationwide. In fact, the creation of this data set was prompted by the widespread calls for increased police accountability and the current gap in tracking of the situational and interpersonal, specifically racial, details surrounding police shootings. Thus, our research seeks to explore the relationship between the race of the victim and the police's level of perceived threat and perceived presence of a mental illness. 
+
+    -   We hypothesize that there is a statistically significant relationship between the race of the victim and the perceived threat level and perceived mental illness. Specifically, we hypothesize that minority races, specifically African American, will correlate with a higher level of perceived threat and perceived presence of a mental illness.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+    -   The variables Person.Race, Factors.Mental-Illness, and Factors.Armed are all categorical.
+
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    -   Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity
+
+    Prince, K. J., & Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77--96. <https://doi.org/10.1177/10887679221119397>
+
 -   Provide a one paragraph summary about the article.
 
+    -   This article studies the influences of race on the existence of resistant behavior in instances of deadly police contact in people who possess mental illnesses. There are many studies focusing on civilian-police conflict, but few focus on instances in which the civilian has a mental illness and the effects of that on the encounter. Overall, they found that race was not a significant or consistent predictor of resistant behavior amongst civilians. They found that current literature examining the influence of mental illness on police and civilian interactions sheds light on potential explanations for resistance but still leaves many gaps to fill.
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+    -   Our research question builds on the data explored in the article because it includes instances of civilian victims who both possess and don't possess mental illnesses. It also differs from the article in that it does not discuss resistant behavior as a component of deadly police interactions.
+
+-   
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-2
 
-# add code here
+police_shootings <- read_csv("data/police_shootings.csv")
+
+glimpse(police_shootings)
 ```
 
 # Data 3
@@ -86,30 +139,64 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
+    -   The Opioids dataset is taken from the CORGIS Dataset Project.
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    -   It was collected by the National Institute on Drug Abuse through resources like emergency room and rehabilitation center data, and records data about opioid abuse and opioid related deaths between the years 1999 and 2019.
+
 -   Write a brief description of the observations.
+
+    -    The observations are broken down to examine the prevalence of opioid abuse into a number of factors, such as the type of opioid abused, and race and sex of the abuser.
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+    -   How does race affect the rate of opioid abuse death in the US?
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+    -   In recent years, the United States has been afflicted by an opioid crisis which has seen opioid overdose deaths increase exponentially from 21,089 in 2010 to more than 106,000 in 2021. It has become one of the biggest killers in the U.S., especially of men. In light of this, we want to investigate whether race has an impact on the rate of opioid abuse death. We hypothesize that opioid abuse death will be most prevalent among White, Black and Hispanic people, and less prevalent among American Indian or Alaskan Native and Asian or Pacific Islander people.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+    -   Rate.Opioid.Race.Hispanic
+
+    -   Rate.Opioid.Race.Asian or Pacific Islander
+
+    -   Rate.Opioid.Black
+
+    -   Rate.Opioid.White
+
+    -   Rate.Opioid.American Indian or Alaska Native
+
+    -   Rate.Opioid.Any.Total
+
+    -   These variables are all quantitative. All but the last one record the rate of overdose deaths among the specified racial group due to anyl opioid per 100,000 people. The final variable records the rate of overdose deaths due to any opioid per 100,000 people.
+
+-   
+
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    -   We are going to refer to a 2008 article "Trends in Opioid Prescribing by Race/Ethnicity for Patients Seeking Care in US Emergency Departments" to complement our research.
+
 -   Provide a one paragraph summary about the article.
 
+    -   This article looks at how race affects the likelihood of cocaine and psychostimulants overdose deaths. It found that death rates were higher for Black people and American Indian/Alaskan Native people. It also found that cocaine and opioid overdoses increased among Hispanic, White and Black people, as did psychostimulants overdoses.
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+    -   Our research question does not focus on cocaine and psychostimulant overdoses but instead opioid overdoses. It also considers data over a longer period of time, from 1999-2019 as opposed to 2004-2019. In this way, we hope to use this article to compare against opioid trends.
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-3
 
-# add code here
+opioids <- read_csv("data/opioids.csv")
+
+glimpse(opioids)
 ```
