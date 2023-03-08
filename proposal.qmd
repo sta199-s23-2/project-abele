@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "Project Team Abele"
 subtitle: "Proposal"
 format: pdf
 editor: visual
@@ -18,21 +18,21 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
-    The source of the data is from the CORGIS Dataset Project.
+    -   The source of the data is from the CORGIS Dataset Project.
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    The data was originally collected by Dennis Kafura on June 27th, 2019 from patient records of various hospitals throughout the United States.
+    -   The data was originally collected by Dennis Kafura on June 27th, 2019 from patient records of various hospitals throughout the United States.
 
 -   Write a brief description of the observations.
 
-    The information provides rates of cancer deaths in each state. These rates are organized based on age, sex, and race. The rates also are categorized for three specific types of cancer: breast cancer, lung cancer, and colorectal cancer.
+    -   The information provides rates of cancer deaths in each state. These rates are organized based on age, sex, and race. The rates also are categorized for three specific types of cancer: breast cancer, lung cancer, and colorectal cancer.
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-    What is the relationship between race and mortality rate and cancer types?
+    -   What is the relationship between race and mortality rate and cancer types?
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
@@ -42,9 +42,9 @@ library(tidyverse)
 
         -   The impact of race and cancer type on mortality rates is influenced by other factors such as age and gender.
 
--   Research topic:
+    -   Research topic:
 
-    -   This research topic aims to explore the relationship between race, cancer type, and mortality among cancer patients. The first hypothesis suggests that mortality rates for the same type of cancer vary across different racial groups. For example, Black and Hispanic cancer patients may appear to have higher mortality rates for a certain type of cancer compared to White patients. The second hypothesis suggests that there are other factors such as age and gender that can impact the relationship between race, cancer type, and mortality rates. This research could potentially provide insights into how to improve cancer screening, diagnosis, and treatment strategies for different racial groups and different types of cancer. 
+        -   This research topic aims to explore the relationship between race, cancer type, and mortality among cancer patients. The first hypothesis suggests that mortality rates for the same type of cancer vary across different racial groups. For example, Black and Hispanic cancer patients may appear to have higher mortality rates for a certain type of cancer compared to White patients. The second hypothesis suggests that there are other factors such as age and gender that can impact the relationship between race, cancer type, and mortality rates. This research could potentially provide insights into how to improve cancer screening, diagnosis, and treatment strategies for different racial groups and different types of cancer. 
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
@@ -54,11 +54,11 @@ library(tidyverse)
 
 -   Find one published credible article on the topic you are interested in researching.
 
-    Saldana-Ruiz, Nallely, et al. "Fundamental causes of colorectal cancer mortality in the United States: understanding the importance of socioeconomic status in creating inequality in mortality." *American journal of public health* 103.1 (2013): 99-104.
+    -   Saldana-Ruiz, Nallely, et al. "Fundamental causes of colorectal cancer mortality in the United States: understanding the importance of socioeconomic status in creating inequality in mortality." *American journal of public health* 103.1 (2013): 99-104.
 
 -   Provide a one paragraph summary about the article.
 
-    The goal of this study is to determine the creation of health disparities in colorectal cancer mortality in the United States from 1968 to 2005. Negative binomial regression was used to analyze trends based on county for colorectal cancer mortality rates, adjusted for ender, race, and age for individuals above 35 years old. The results reveal that prior to 1980, there was a stable gradient in colorectal cancer morality, with higher SES counties at greater risk. However, beginning in 1980, this gradient began to narrow and then reversed as people living in higher SES counties experiences greater reductions in colorectal cancer mortality rates than those in lower SES countries. This supports the fundamental cause hypothesis, suggesting that social and economic resources are important factors in influencing mortality rates once knowledge about prevention and treatment of colorectal cancer became available.
+    -   The goal of this study is to determine the creation of health disparities in colorectal cancer mortality in the United States from 1968 to 2005. Negative binomial regression was used to analyze trends based on county for colorectal cancer mortality rates, adjusted for ender, race, and age for individuals above 35 years old. The results reveal that prior to 1980, there was a stable gradient in colorectal cancer morality, with higher SES counties at greater risk. However, beginning in 1980, this gradient began to narrow and then reversed as people living in higher SES counties experiences greater reductions in colorectal cancer mortality rates than those in lower SES countries. This supports the fundamental cause hypothesis, suggesting that social and economic resources are important factors in influencing mortality rates once knowledge about prevention and treatment of colorectal cancer became available.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -97,7 +97,7 @@ glimpse(cancer)
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-    -   A recent uptick in police brutality and racially motivated police action has sparked outrage nationwide. In fact, the creation of this data set was prompted by the widespread calls for increased police accountability and the current gap in tracking of the situational and interpersonal, specifically racial, details surrounding police shootings. Thus, our research seeks to explore the relationship between the race of the victim and the police's level of perceived threat and perceived presence of a mental illness. 
+    -   A recent uptick in police brutality and racially motivated police action has sparked outrage nationwide. In fact, the creation of this data set was prompted by the widespread calls for increased police accountability and the current gap in tracking of the situational and interpersonal, specifically racial, details surrounding police shootings. Thus, our research seeks to explore the relationship between the race of the victim and the police's level of perceived threat and perceived presence of a mental illness.
 
     -   We hypothesize that there is a statistically significant relationship between the race of the victim and the perceived threat level and perceived mental illness. Specifically, we hypothesize that minority races, specifically African American, will correlate with a higher level of perceived threat and perceived presence of a mental illness.
 
@@ -109,19 +109,15 @@ glimpse(cancer)
 
 -   Find one published credible article on the topic you are interested in researching.
 
-    -   Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity
-
-    Prince, K. J., & Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77--96. <https://doi.org/10.1177/10887679221119397>
+    -   Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Prince, K. J., & Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77--96. <https://doi.org/10.1177/10887679221119397>
 
 -   Provide a one paragraph summary about the article.
 
-    -   This article studies the influences of race on the existence of resistant behavior in instances of deadly police contact in people who possess mental illnesses. There are many studies focusing on civilian-police conflict, but few focus on instances in which the civilian has a mental illness and the effects of that on the encounter. Overall, they found that race was not a significant or consistent predictor of resistant behavior amongst civilians. They found that current literature examining the influence of mental illness on police and civilian interactions sheds light on potential explanations for resistance but still leaves many gaps to fill.
+    -   This article studies the influences of race on the existence of resistant behavior in instances of deadly police contact in people who possess mental illnesses. There are many studies focusing on civilian-police conflict, but few focus on instances in which the civilian has a mental illness and the effects of that on the encounter. Overall, they found that race was not a significant or consistent predictor of resistant behavior among civilians. They found that current literature examining the influence of mental illness on police and civilian interactions sheds light on potential explanations for resistance but still leaves many gaps to fill.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
     -   Our research question builds on the data explored in the article because it includes instances of civilian victims who both possess and don't possess mental illnesses. It also differs from the article in that it does not discuss resistant behavior as a component of deadly police interactions.
-
--   
 
 ## Glimpse of data
 
@@ -147,7 +143,7 @@ glimpse(police_shootings)
 
 -   Write a brief description of the observations.
 
-    -    The observations are broken down to examine the prevalence of opioid abuse into a number of factors, such as the type of opioid abused, and race and sex of the abuser.
+    -   The observations are broken down to examine the prevalence of opioid abuse into a number of factors, such as the type of opioid abused, and race and sex of the abuser.
 
 ## Research question
 
@@ -173,9 +169,7 @@ glimpse(police_shootings)
 
     -   Rate.Opioid.Any.Total
 
-    -   These variables are all quantitative. All but the last one record the rate of overdose deaths among the specified racial group due to anyl opioid per 100,000 people. The final variable records the rate of overdose deaths due to any opioid per 100,000 people.
-
--   
+    -   These variables are all quantitative. All but the last one records the rate of overdose deaths among the specified racial group due to any opioid per 100,000 people. The final variable records the rate of overdose deaths due to any opioid per 100,000 people.
 
 ## Literature
 

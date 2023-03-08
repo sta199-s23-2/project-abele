@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project title</title>
+<title>Project Team Abele</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -132,19 +137,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">TEAM NAME</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">TEAM NAME</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./proposal.html" aria-current="page">Proposal</a>
+    <a class="nav-link active" href="./proposal.html" aria-current="page">
+ <span class="menu-text">Proposal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./presentation.pdf">Presentation</a>
+    <a class="nav-link" href="./presentation.pdf">
+ <span class="menu-text">Presentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./report.html">Report</a>
+    <a class="nav-link" href="./report.html">
+ <span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">About</a>
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -157,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -190,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project title</h1>
+<h1 class="title">Project Team Abele</h1>
 <p class="subtitle lead">Proposal</p>
 </div>
 
@@ -199,6 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -207,49 +218,162 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.2.2</code></pre>
-</div>
 </div>
 <section id="data-1" class="level1">
 <h1>Data 1</h1>
 <section id="introduction-and-data" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<ul>
+<li>The source of the data is from the CORGIS Dataset Project.</li>
+</ul></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<ul>
+<li>The data was originally collected by Dennis Kafura on June 27th, 2019 from patient records of various hospitals throughout the United States.</li>
+</ul></li>
+<li><p>Write a brief description of the observations.</p>
+<ul>
+<li>The information provides rates of cancer deaths in each state. These rates are organized based on age, sex, and race. The rates also are categorized for three specific types of cancer: breast cancer, lung cancer, and colorectal cancer.</li>
+</ul></li>
 </ul>
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research question</h2>
 <ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<ul>
+<li>What is the relationship between race and mortality rate and cancer types?</li>
+</ul></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<ul>
+<li><p>Hypotheses:</p>
+<ul>
+<li><p>Different racial groups have different mortality rates for the same type of cancer.</p></li>
+<li><p>The impact of race and cancer type on mortality rates is influenced by other factors such as age and gender.</p></li>
+</ul></li>
+<li><p>Research topic:</p>
+<ul>
+<li>This research topic aims to explore the relationship between race, cancer type, and mortality among cancer patients. The first hypothesis suggests that mortality rates for the same type of cancer vary across different racial groups. For example, Black and Hispanic cancer patients may appear to have higher mortality rates for a certain type of cancer compared to White patients. The second hypothesis suggests that there are other factors such as age and gender that can impact the relationship between race, cancer type, and mortality rates. This research could potentially provide insights into how to improve cancer screening, diagnosis, and treatment strategies for different racial groups and different types of cancer.&nbsp;</li>
+</ul></li>
+</ul></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<ul>
+<li>The types of variables in our research question are categorical.</li>
+</ul></li>
 </ul>
 </section>
 <section id="literature" class="level2">
 <h2 class="anchored" data-anchor-id="literature">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<ul>
+<li>Saldana-Ruiz, Nallely, et al.&nbsp;“Fundamental causes of colorectal cancer mortality in the United States: understanding the importance of socioeconomic status in creating inequality in mortality.” <em>American journal of public health</em> 103.1 (2013): 99-104.</li>
+</ul></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<ul>
+<li>The goal of this study is to determine the creation of health disparities in colorectal cancer mortality in the United States from 1968 to 2005. Negative binomial regression was used to analyze trends based on county for colorectal cancer mortality rates, adjusted for ender, race, and age for individuals above 35 years old. The results reveal that prior to 1980, there was a stable gradient in colorectal cancer morality, with higher SES counties at greater risk. However, beginning in 1980, this gradient began to narrow and then reversed as people living in higher SES counties experiences greater reductions in colorectal cancer mortality rates than those in lower SES countries. This supports the fundamental cause hypothesis, suggesting that social and economic resources are important factors in influencing mortality rates once knowledge about prevention and treatment of colorectal cancer became available.</li>
+</ul></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<ul>
+<li>This research question builds on the research given because it also explores the relationship between other cancer types– lung cancer and breast cancer– as well as colorectal cancer.</li>
+</ul></li>
 </ul>
 </section>
 <section id="glimpse-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cancer <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/cancer.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 51 Columns: 75
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): State
+dbl (74): Total.Rate, Total.Number, Total.Population, Rates.Age.&lt; 18, Rates....
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(cancer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 51
+Columns: 75
+$ State                                          &lt;chr&gt; "Alabama", "Alaska", "A…
+$ Total.Rate                                     &lt;dbl&gt; 214.2, 128.1, 165.6, 22…
+$ Total.Number                                   &lt;dbl&gt; 71529, 6361, 74286, 456…
+$ Total.Population                               &lt;dbl&gt; 33387205, 4966180, 4484…
+$ `Rates.Age.&lt; 18`                               &lt;dbl&gt; 2.0, 1.7, 2.5, 2.3, 2.6…
+$ `Rates.Age.18-45`                              &lt;dbl&gt; 18.5, 11.8, 13.6, 17.6,…
+$ `Rates.Age.45-64`                              &lt;dbl&gt; 244.7, 170.9, 173.6, 25…
+$ `Rates.Age.&gt; 64`                               &lt;dbl&gt; 1017.8, 965.2, 840.2, 1…
+$ `Rates.Age and Sex.&lt; 18.Female`                &lt;dbl&gt; 2.0, 0.0, 2.6, 2.6, 2.4…
+$ `Rates.Age and Sex.&lt; 18.Male`                  &lt;dbl&gt; 2.1, 0.0, 2.5, 2.0, 2.8…
+$ `Rates.Age and Sex.18 - 45.Female`             &lt;dbl&gt; 20.1, 13.9, 15.2, 19.5,…
+$ `Rates.Age and Sex.18 - 45.Male`               &lt;dbl&gt; 16.8, 10.0, 12.2, 15.8,…
+$ `Rates.Age and Sex.45 - 64.Female`             &lt;dbl&gt; 201.0, 157.6, 156.5, 21…
+$ `Rates.Age and Sex.45 - 64.Male`               &lt;dbl&gt; 291.5, 183.0, 191.8, 29…
+$ `Rates.Age and Sex.&gt; 64.Female`                &lt;dbl&gt; 803.6, 849.6, 706.1, 83…
+$ `Rates.Age and Sex.&gt; 64.Male`                  &lt;dbl&gt; 1308.6, 1086.4, 1000.2,…
+$ Rates.Race.White                               &lt;dbl&gt; 186.1, 168.2, 153.5, 19…
+$ `Rates.Race.White non-Hispanic`                &lt;dbl&gt; 187.5, 170.2, 156.4, 19…
+$ Rates.Race.Black                               &lt;dbl&gt; 216.1, 183.7, 166.8, 22…
+$ Rates.Race.Asian                               &lt;dbl&gt; 81.3, 118.7, 93.0, 115.…
+$ Rates.Race.Indigenous                          &lt;dbl&gt; 69.9, 247.2, 116.2, 59.…
+$ `Rates.Race and Sex.Female.White`              &lt;dbl&gt; 149.2, 145.5, 130.8, 15…
+$ `Rates.Race and Sex.Female.White non-Hispanic` &lt;dbl&gt; 150.2, 147.8, 134.0, 15…
+$ `Rates.Race and Sex.Female.Black`              &lt;dbl&gt; 167.2, 141.6, 146.5, 18…
+$ `Rates.Race and Sex.Female.Black non-Hispanic` &lt;dbl&gt; 167.9, 148.8, 154.3, 18…
+$ `Rates.Race and Sex.Female.Asian`              &lt;dbl&gt; 84.9, 105.2, 80.6, 91.7…
+$ `Rates.Race and Sex.Female.Indigenous`         &lt;dbl&gt; 53.8, 219.4, 100.5, 44.…
+$ `Rates.Race and Sex.Male.White`                &lt;dbl&gt; 237.1, 195.6, 182.2, 24…
+$ `Rates.Race and Sex.Male.White non-Hispanic`   &lt;dbl&gt; 239.2, 197.3, 184.7, 24…
+$ `Rates.Race and Sex.Male.Black`                &lt;dbl&gt; 297.9, 240.8, 195.3, 30…
+$ `Rates.Race and Sex.Male.Black non-Hispanic`   &lt;dbl&gt; 299.2, 246.6, 205.0, 30…
+$ `Rates.Race and Sex.Male.Asian`                &lt;dbl&gt; 75.7, 142.8, 112.5, 157…
+$ `Rates.Race and Sex.Male.Indigenous`           &lt;dbl&gt; 88.3, 284.9, 139.5, 74.…
+$ Rates.Race.Hispanic                            &lt;dbl&gt; 66.5, 88.8, 128.5, 81.2…
+$ `Rates.Race and Sex.Female.Hispanic`           &lt;dbl&gt; 58.3, 73.1, 106.5, 74.6…
+$ `Rates.Race and Sex.Male.Hispanic`             &lt;dbl&gt; 77.1, 104.0, 158.4, 90.…
+$ Types.Breast.Total                             &lt;dbl&gt; 27.4, 17.8, 23.3, 27.9,…
+$ `Types.Breast.Age.18 - 44`                     &lt;dbl&gt; 5.1, 2.9, 3.8, 5.0, 4.0…
+$ `Types.Breast.Age.45 - 64`                     &lt;dbl&gt; 39.8, 27.8, 33.2, 38.4,…
+$ `Types.Breast.Age.&gt; 64`                        &lt;dbl&gt; 95.7, 108.0, 90.5, 100.…
+$ Types.Breast.Race.White                        &lt;dbl&gt; 20.5, 21.3, 20.4, 21.7,…
+$ `Types.Breast.Race.White non-Hispanic`         &lt;dbl&gt; 20.6, 21.8, 20.9, 22.0,…
+$ Types.Breast.Race.Black                        &lt;dbl&gt; 30.3, 0.0, 26.3, 31.1, …
+$ `Types.Breast.Race.Black non-Hispanic`         &lt;dbl&gt; 30.4, 0.0, 28.0, 31.0, …
+$ Types.Breast.Race.Asian                        &lt;dbl&gt; 0.0, 12.2, 10.7, 0.0, 1…
+$ Types.Breast.Race.Indigenous                   &lt;dbl&gt; 0.0, 25.5, 11.4, 0.0, 7…
+$ Types.Breast.Race.Hispanic                     &lt;dbl&gt; 0.0, 0.0, 16.2, 10.9, 1…
+$ Types.Colorectal.Total                         &lt;dbl&gt; 19.4, 11.9, 14.9, 21.2,…
+$ `Types.Colorectal.Age and Sex.Female.18 - 44`  &lt;dbl&gt; 1.6, 0.0, 1.3, 1.9, 1.2…
+$ `Types.Colorectal.Age and Sex.Male.18 - 44`    &lt;dbl&gt; 2.3, 0.0, 1.4, 2.2, 1.4…
+$ `Types.Colorectal.Age and Sex.Female.45 - 64`  &lt;dbl&gt; 18.0, 15.3, 12.6, 19.7,…
+$ `Types.Colorectal.Age and Sex.Male.45 - 64`    &lt;dbl&gt; 28.7, 17.6, 19.2, 28.6,…
+$ `Types.Colorectal.Age and Sex.Female.&gt; 64`     &lt;dbl&gt; 78.4, 71.7, 67.6, 85.8,…
+$ `Types.Colorectal.Age and Sex.Male.&gt; 64`       &lt;dbl&gt; 106.0, 102.3, 85.2, 114…
+$ Types.Colorectal.Race.White                    &lt;dbl&gt; 15.9, 13.6, 13.8, 17.7,…
+$ `Types.Colorectal.Race.White non-Hispanic`     &lt;dbl&gt; 16.0, 13.8, 13.9, 17.9,…
+$ Types.Colorectal.Race.Black                    &lt;dbl&gt; 24.4, 0.0, 18.7, 26.3, …
+$ `Types.Colorectal.Race.Black non-Hispanic`     &lt;dbl&gt; 24.5, 0.0, 19.7, 26.4, …
+$ Types.Colorectal.Race.Asian                    &lt;dbl&gt; 0.0, 12.5, 10.6, 0.0, 1…
+$ Types.Colorectal.Race.Indigenous               &lt;dbl&gt; 0.0, 34.7, 10.1, 0.0, 7…
+$ Types.Colorectal.Race.Hispanic                 &lt;dbl&gt; 5.7, 0.0, 13.1, 8.1, 11…
+$ Types.Lung.Total                               &lt;dbl&gt; 66.4, 36.6, 42.3, 73.3,…
+$ `Types.Lung.Age and Sex.Female.18 - 44`        &lt;dbl&gt; 1.7, 0.0, 1.1, 1.9, 0.8…
+$ `Types.Lung.Age and Sex.Male.18 - 44`          &lt;dbl&gt; 2.4, 0.0, 0.8, 1.8, 0.8…
+$ `Types.Lung.Age and Sex.Female.45 - 64`        &lt;dbl&gt; 54.8, 39.7, 33.2, 61.4,…
+$ `Types.Lung.Age and Sex.Male.45 - 64`          &lt;dbl&gt; 102.9, 50.3, 47.0, 106.…
+$ `Types.Lung.Age and Sex.Female.&gt; 64`           &lt;dbl&gt; 221.7, 268.3, 191.9, 24…
+$ `Types.Lung.Age and Sex.Male.&gt; 64`             &lt;dbl&gt; 457.4, 335.0, 275.8, 48…
+$ Types.Lung.Race.White                          &lt;dbl&gt; 59.9, 48.7, 39.5, 63.4,…
+$ `Types.Lung.Race.White non-Hispanic`           &lt;dbl&gt; 60.4, 49.5, 42.2, 64.2,…
+$ Types.Lung.Race.Black                          &lt;dbl&gt; 52.6, 45.6, 38.2, 62.9,…
+$ `Types.Lung.Race.Black non-Hispanic`           &lt;dbl&gt; 52.8, 47.9, 40.4, 63.0,…
+$ Types.Lung.Race.Asian                          &lt;dbl&gt; 23.0, 33.0, 21.3, 18.1,…
+$ Types.Lung.Race.Indigenous                     &lt;dbl&gt; 22.9, 74.4, 11.1, 16.2,…
+$ Types.Lung.Race.Hispanic                       &lt;dbl&gt; 14.8, 0.0, 21.6, 14.6, …</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -258,31 +382,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introduction-and-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<ul>
+<li>This data is sourced from the CORGIS Dataset Project and was uploaded by Dennis Kafura, Joung Min Choi, and Bo Guan.</li>
+</ul></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<ul>
+<li>This dataset was originally collected by the Washington Post over the span of 2015-2022. They assembled the dataset by manually culling local news reports, amassing information from social media and law enforcement websites, and monitoring independent databases such as Fatal Encounters.&nbsp;</li>
+</ul></li>
+<li><p>Write a brief description of the observations.</p>
+<ul>
+<li>The dataset contains observations about instances of police shootings in the US. The variables are mostly focused on the details of the situation and people involved in the shooting, such as the date and location of the shooting and whether the victim was armed or experiencing a mental health crisis.</li>
+</ul></li>
 </ul>
 </section>
 <section id="research-question-1" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-1">Research question</h2>
 <ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<ul>
+<li>Is there a relationship between the race of the person shot and existence of a perceived threat and presence of mental illness during police shootings in the United States?</li>
+</ul></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<ul>
+<li><p>A recent uptick in police brutality and racially motivated police action has sparked outrage nationwide. In fact, the creation of this data set was prompted by the widespread calls for increased police accountability and the current gap in tracking of the situational and interpersonal, specifically racial, details surrounding police shootings. Thus, our research seeks to explore the relationship between the race of the victim and the police’s level of perceived threat and perceived presence of a mental illness.</p></li>
+<li><p>We hypothesize that there is a statistically significant relationship between the race of the victim and the perceived threat level and perceived mental illness. Specifically, we hypothesize that minority races, specifically African American, will correlate with a higher level of perceived threat and perceived presence of a mental illness.</p></li>
+</ul></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<ul>
+<li>The variables Person.Race, Factors.Mental-Illness, and Factors.Armed are all categorical.</li>
+</ul></li>
 </ul>
 </section>
 <section id="literature-1" class="level2">
 <h2 class="anchored" data-anchor-id="literature-1">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<ul>
+<li>Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Prince, K. J., &amp; Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77–96. <a href="https://doi.org/10.1177/10887679221119397" class="uri">https://doi.org/10.1177/10887679221119397</a></li>
+</ul></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<ul>
+<li>This article studies the influences of race on the existence of resistant behavior in instances of deadly police contact in people who possess mental illnesses. There are many studies focusing on civilian-police conflict, but few focus on instances in which the civilian has a mental illness and the effects of that on the encounter. Overall, they found that race was not a significant or consistent predictor of resistant behavior amongst civilians. They found that current literature examining the influence of mental illness on police and civilian interactions sheds light on potential explanations for resistance but still leaves many gaps to fill.</li>
+</ul></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<ul>
+<li>Our research question builds on the data explored in the article because it includes instances of civilian victims who both possess and don’t possess mental illnesses. It also differs from the article in that it does not discuss resistant behavior as a component of deadly police interactions.</li>
+</ul></li>
 </ul>
 </section>
 <section id="glimpse-of-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/police_shootings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 6569 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): Person.Name, Person.Gender, Person.Race, Incident.Location.City, I...
+dbl  (4): Person.Age, Incident.Date.Month, Incident.Date.Day, Incident.Date....
+lgl  (2): Factors.Mental-Illness, Shooting.Body-Camera
+date (1): Incident.Date.Full
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(police_shootings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,569
+Columns: 16
+$ Person.Name              &lt;chr&gt; "Tim Elliot", "Lewis Lee Lembke", "John Paul …
+$ Person.Age               &lt;dbl&gt; 53, 47, 23, 32, 39, 18, 22, 35, 34, 47, 25, 3…
+$ Person.Gender            &lt;chr&gt; "Male", "Male", "Male", "Male", "Male", "Male…
+$ Person.Race              &lt;chr&gt; "Asian", "White", "Hispanic", "White", "Hispa…
+$ Incident.Date.Month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ Incident.Date.Day        &lt;dbl&gt; 2, 2, 3, 4, 4, 4, 5, 6, 6, 6, 6, 7, 7, 7, 7, …
+$ Incident.Date.Year       &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015, 201…
+$ Incident.Date.Full       &lt;date&gt; 2015-01-02, 2015-01-02, 2015-01-03, 2015-01-…
+$ Incident.Location.City   &lt;chr&gt; "Shelton", "Aloha", "Wichita", "San Francisco…
+$ Incident.Location.State  &lt;chr&gt; "WA", "OR", "KS", "CA", "CO", "OK", "AZ", "KS…
+$ Factors.Armed            &lt;chr&gt; "gun", "gun", "unarmed", "toy weapon", "nail …
+$ `Factors.Mental-Illness` &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU…
+$ `Factors.Threat-Level`   &lt;chr&gt; "attack", "attack", "other", "attack", "attac…
+$ Factors.Fleeing          &lt;chr&gt; "Not fleeing", "Not fleeing", "Not fleeing", …
+$ Shooting.Manner          &lt;chr&gt; "shot", "shot", "shot and Tasered", "shot", "…
+$ `Shooting.Body-Camera`   &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU…</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -291,31 +476,127 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introduction-and-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<ul>
+<li>The Opioids dataset is taken from the CORGIS Dataset Project.</li>
+</ul></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<ul>
+<li>It was collected by the National Institute on Drug Abuse through resources like emergency room and rehabilitation center data, and records data about opioid abuse and opioid related deaths between the years 1999 and 2019.</li>
+</ul></li>
+<li><p>Write a brief description of the observations.</p>
+<ul>
+<li>The observations are broken down to examine the prevalence of opioid abuse into a number of factors, such as the type of opioid abused, and race and sex of the abuser.</li>
+</ul></li>
 </ul>
 </section>
 <section id="research-question-2" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-2">Research question</h2>
 <ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<ul>
+<li>How does race affect the rate of opioid abuse death in the US?</li>
+</ul></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<ul>
+<li>In recent years, the United States has been afflicted by an opioid crisis which has seen opioid overdose deaths increase exponentially from 21,089 in 2010 to more than 106,000 in 2021. It has become one of the biggest killers in the U.S., especially of men. In light of this, we want to investigate whether race has an impact on the rate of opioid abuse death. We hypothesize that opioid abuse death will be most prevalent among White, Black and Hispanic people, and less prevalent among American Indian or Alaskan Native and Asian or Pacific Islander people.</li>
+</ul></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<ul>
+<li><p>Rate.Opioid.Race.Hispanic</p></li>
+<li><p>Rate.Opioid.Race.Asian or Pacific Islander</p></li>
+<li><p>Rate.Opioid.Black</p></li>
+<li><p>Rate.Opioid.White</p></li>
+<li><p>Rate.Opioid.American Indian or Alaska Native</p></li>
+<li><p>Rate.Opioid.Any.Total</p></li>
+<li><p>These variables are all quantitative. All but the last one records the rate of overdose deaths among the specified racial group due to any opioid per 100,000 people. The final variable records the rate of overdose deaths due to any opioid per 100,000 people.</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="literature-2" class="level2">
 <h2 class="anchored" data-anchor-id="literature-2">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<ul>
+<li>We are going to refer to a 2008 article “Trends in Opioid Prescribing by Race/Ethnicity for Patients Seeking Care in US Emergency Departments” to complement our research.</li>
+</ul></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<ul>
+<li>This article looks at how race affects the likelihood of cocaine and psychostimulants overdose deaths. It found that death rates were higher for Black people and American Indian/Alaskan Native people. It also found that cocaine and opioid overdoses increased among Hispanic, White and Black people, as did psychostimulants overdoses.</li>
+</ul></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<ul>
+<li>Our research question does not focus on cocaine and psychostimulant overdoses but instead opioid overdoses. It also considers data over a longer period of time, from 1999-2019 as opposed to 2004-2019. In this way, we hope to use this article to compare against opioid trends.</li>
+</ul></li>
 </ul>
 </section>
 <section id="glimpse-of-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>opioids <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/opioids.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 21 Columns: 49
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (49): Year, Number.All, Number.Opioid.Any, Number.Opioid.Prescription, N...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(opioids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 21
+Columns: 49
+$ Year                                                             &lt;dbl&gt; 1999,…
+$ Number.All                                                       &lt;dbl&gt; 16849…
+$ Number.Opioid.Any                                                &lt;dbl&gt; 8050,…
+$ Number.Opioid.Prescription                                       &lt;dbl&gt; 3442,…
+$ Number.Opioid.Synthetic                                          &lt;dbl&gt; 730, …
+$ Number.Opioid.Heroin                                             &lt;dbl&gt; 1960,…
+$ Number.Opioid.Cocaine                                            &lt;dbl&gt; 3822,…
+$ Rate.All.Total                                                   &lt;dbl&gt; 6.1, …
+$ Rate.All.Sex.Female                                              &lt;dbl&gt; 3.9, …
+$ Rate.All.Sex.Male                                                &lt;dbl&gt; 8.2, …
+$ Rate.All.Race.White                                              &lt;dbl&gt; 6.2, …
+$ Rate.All.Race.Black                                              &lt;dbl&gt; 7.5, …
+$ `Rate.All.Race.Asian or Pacific Islander`                        &lt;dbl&gt; 1.2, …
+$ Rate.All.Race.Hispanic                                           &lt;dbl&gt; 5.4, …
+$ `Rate.All.Race.American Indian or Alaska Native`                 &lt;dbl&gt; 6.0, …
+$ Rate.Opioid.Any.Total                                            &lt;dbl&gt; 2.9, …
+$ Rate.Opioid.Any.Sex.Female                                       &lt;dbl&gt; 1.4, …
+$ Rate.Opioid.Any.Sex.Male                                         &lt;dbl&gt; 4.3, …
+$ Rate.Opioid.Any.Race.White                                       &lt;dbl&gt; 2.8, …
+$ Rate.Opioid.Any.Race.Black                                       &lt;dbl&gt; 3.5, …
+$ `Rate.Opioid.Any.Race.Asian or Pacific Islander`                 &lt;dbl&gt; 0.3, …
+$ Rate.Opioid.Any.Race.Hispanic                                    &lt;dbl&gt; 3.5, …
+$ `Rate.Opioid.Any.Race.American Indian or Alaska Native`          &lt;dbl&gt; 2.9, …
+$ Rate.Opioid.Prescription.Total                                   &lt;dbl&gt; 1.2, …
+$ Rate.Opioid.Prescription.Sex.Female                              &lt;dbl&gt; 0.7, …
+$ Rate.Opioid.Prescription.Sex.Male                                &lt;dbl&gt; 1.7, …
+$ Rate.Opioid.Prescription.Race.White                              &lt;dbl&gt; 1.3, …
+$ Rate.Opioid.Prescription.Race.Black                              &lt;dbl&gt; 0.8, …
+$ Rate.Opioid.Prescription.Race.Hispanic                           &lt;dbl&gt; 1.6, …
+$ `Rate.Opioid.Prescription.Race.American Indian or Alaska Native` &lt;dbl&gt; 1.3, …
+$ Rate.Opioid.Synthetic.Total                                      &lt;dbl&gt; 0.3, …
+$ Rate.Opioid.Synthetic.Sex.Female                                 &lt;dbl&gt; 0.2, …
+$ Rate.Opioid.Synthetic.Sex.Male                                   &lt;dbl&gt; 0.3, …
+$ Rate.Opioid.Synthetic.Race.White                                 &lt;dbl&gt; 0.3, …
+$ Rate.Opioid.Synthetic.Race.Black                                 &lt;dbl&gt; 0.1, …
+$ Rate.Opioid.Synthetic.Race.Hispanic                              &lt;dbl&gt; 0.1, …
+$ Rate.Opioid.Heroin.Total                                         &lt;dbl&gt; 0.7, …
+$ Rate.Opioid.Heroin.Sex.Female                                    &lt;dbl&gt; 0.2, …
+$ Rate.Opioid.Heroin.Sex.Male                                      &lt;dbl&gt; 1.2, …
+$ Rate.Opioid.Heroin.Race.White                                    &lt;dbl&gt; 0.7, …
+$ Rate.Opioid.Heroin.Race.Black                                    &lt;dbl&gt; 0.8, …
+$ Rate.Opioid.Heroin.Race.Hispanic                                 &lt;dbl&gt; 1.1, …
+$ Rate.Opioid.Cocaine.Total                                        &lt;dbl&gt; 1.4, …
+$ Rate.Opioid.Cocaine.Sex.Female                                   &lt;dbl&gt; 0.6, …
+$ Rate.Opioid.Cocaine.Sex.Male                                     &lt;dbl&gt; 2.1, …
+$ Rate.Opioid.Cocaine.Race.White                                   &lt;dbl&gt; 1.0, …
+$ Rate.Opioid.Cocaine.Race.Black                                   &lt;dbl&gt; 3.7, …
+$ Rate.Opioid.Cocaine.Race.Hispanic                                &lt;dbl&gt; 1.7, …
+$ `Rate.Opioid.Cocaine.Race.American Indian or Alaska Native`      &lt;dbl&gt; 0.9, …</code></pre>
+</div>
 </div>
 
 
@@ -364,7 +645,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -392,31 +690,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
