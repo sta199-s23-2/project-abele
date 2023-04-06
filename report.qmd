@@ -37,10 +37,24 @@ police_shootings |>
 ```
 
 ```{r}
-#| label: location-race
-
+#| label: shootings-over-time
+police_shootings |>
+  ggplot(aes(x=Incident.Date.Year, fill = Person.Race)) +
+  geom_bar() + 
+  labs(title = "P")
+  
 ```
 
 ```{r}
-#| label: colorectal-cancer
+#| label: mental illness-race
+police_shootings |>
+  ggplot(aes(x= Person.Race , fill=Incident.Location.State)) +
+  geom_bar()
+```
+
+```{r}
+library(usmap)
+library(ggplot2)
+
+plot_usmap(regions = "states", color = "red")
 ```
