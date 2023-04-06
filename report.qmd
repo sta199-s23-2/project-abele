@@ -7,40 +7,38 @@ execute:
   echo: true
 ---
 
-**Research Question:** How does race impact the relationship between cancer type and mortality rate?
+**Research Question:** How does race, age, location, presence of mental illness, and other factors impact the prevalence of police shootings in the United States?
+
+\
 
 **Introduction/Data**
 
 **Methodology**
 
--   How do you plan to answer your research question?
-
-    -   We plan to answer our research question by visualizing the relationship between each cancer type and the associated mortality rates on various scatterplots whilst grouping by race. This will enable us to discern whether certain races when paired with certain cancer types are more or less likely to die. Additionally, we plan to use multiple linear regression analysis to ensure that the other variables excluding race and cancer type, such as gender and location, are held constant when determining mortality rate. This will enable us to ensure that no confounding variables impact the correlational and causal relationships we study.
-
--   Prediction? Inference? Both?
-
-    -   Prediction -- We predict that race will have a statistically significant impact on the relationship between cancer type and mortality rate. Due to factors like racism in the healthcare industry, we hypothesize that cancer types that require more interventionist treatment may have disproportionate mortality rates associated with races that are traditionally discriminated against. 
-
-    -   Inference -- We infer that cancer types with universally higher mortality rates, such as lung, will have less variation in mortality rate across races because the treatment given by hospitals is less influential in determining survival. 
-
 ```{r}
 #| label: load-data
 library(tidyverse)
 library(tidymodels)
-cancer <- read_csv("data/cancer.csv")
+police_shootings <- read_csv("data/police_shootings.csv")
 
 ```
 
 ```{r}
-#| label: breast-cancer
-cancer |>
-  ggplot(aes(x=Types.Breast.Race.Black, y=Types.Breast.Total)) +
-  geom_point() + 
-  geom_smooth()
+#| label: age-prevalence
+
+police_shootings |>
+  filter(Person.Age>0) |>
+  ggplot(aes(x=Person.Age, color = Person.Race)) +
+  geom_bar() +
+  labs(Title = "Relationship Between Victim Age and Prevalence of Police 
+       Shooting", x= "Victim Age", y = "Number of Reported Shootings", 
+       legend = "Race")
+
 ```
 
 ```{r}
-#| label: lung-cancer
+#| label: location-race
+
 ```
 
 ```{r}
