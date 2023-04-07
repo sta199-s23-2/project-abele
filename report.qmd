@@ -64,7 +64,7 @@ plot_usmap(regions = "states", color = "red")
 
 We are investigating and determining which of these factors (race, age, location, presence of mental illness) has the most impact on shootings in the United States.
 
-Graph interpretation: The first graph shows the correlation between victim age and number of reported shootings. Victims, who identified as African Americans between the ages of 25-27 years demonstrated the highest number of reported shootings.
+Graph interpretation: The first graph shows the correlation between victim age and number of reported shootings. Victims who are between the ages of 25-37 years appear to experience the highest prevalence of police shootings. Indeed, the number of people between these ages are significantly more affected than people older and younger, indicating that age is an important factor. However, across the whole spectrum of ages, it is also clear that people of African American race are more disproportionately affected, suggesting that race is also a significant factor in determining the prevalence of police shootings.
 
 -- Make sure that this is connected to your research question. It is easy to get excited and explore your data set. Make sure that all results you generate are in-line with the research question you have asked.
 
