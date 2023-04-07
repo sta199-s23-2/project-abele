@@ -45,6 +45,15 @@ police_shootings |>
 ```
 
 ```{r}
+#| label: location-race
+
+police_shootings |>
+  ggplot(aes(x = Incident.Location.State, fill = Person.Race)) +
+  geom_bar()
+
+```
+
+```{r}
 #| label: mental illness-race
 police_shootings |>
   ggplot(aes(x= Person.Race , fill=Incident.Location.State)) +
