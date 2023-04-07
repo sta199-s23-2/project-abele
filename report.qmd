@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "Prevalence of Police Shootings"
 subtitle: "Report"
 format: html
 editor: visual
@@ -29,7 +29,7 @@ police_shootings |>
   filter(Person.Age>0) |>
   ggplot(aes(x=Person.Age, color = Person.Race)) +
   geom_bar() +
-  labs(Title = "Relationship Between Victim Age and Prevalence of Police 
+  labs(title = "Relationship Between Victim Age, Race, and Prevalence of Police 
        Shooting", x= "Victim Age", y = "Number of Reported Shootings", 
        legend = "Race")
 
@@ -40,16 +40,21 @@ police_shootings |>
 police_shootings |>
   ggplot(aes(x=Incident.Date.Year, fill = Person.Race)) +
   geom_bar() + 
-  labs(title = "P")
+  labs(title = "Relationship Between Race, Year, and Prevalence of Police 
+       Shooting", x= "Year", y = "Number of Reported Shootings", 
+       legend = "Race")
   
 ```
 
 ```{r}
 #| label: location-race
-
+#| fig-width: 30
 police_shootings |>
   ggplot(aes(x = Incident.Location.State, fill = Person.Race)) +
-  geom_bar()
+  geom_bar() +
+  labs(title = "Relationship Between State, Race, and Prevalence of Police 
+       Shooting", x= "State", y = "Number of Reported Shootings", 
+       legend = "Race")
 
 ```
 
