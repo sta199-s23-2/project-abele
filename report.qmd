@@ -62,6 +62,10 @@ plot_usmap(regions = "states", color = "red")
 
 -- What are you finding out??
 
+We are investigating and determining which of these factors (race, age, location, presence of mental illness) has the most impact on shootings in the United States.
+
+An overview of police shoots with regard to Race
+
 -- Make sure that this is connected to your research question. It is easy to get excited and explore your data set. Make sure that all results you generate are in-line with the research question you have asked.
 
 \
