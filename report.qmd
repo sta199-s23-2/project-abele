@@ -9,14 +9,13 @@ execute:
 
 **Research Question:** How does race, age, location, presence of mental illness, and other factors impact the prevalence of police shootings in the United States?
 
-\
-
 **Introduction/Data**
 
 **Methodology**
 
 ```{r}
 #| label: load-data
+#| message: false
 library(tidyverse)
 library(tidymodels)
 police_shootings <- read_csv("data/police_shootings.csv")
