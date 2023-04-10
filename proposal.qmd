@@ -71,6 +71,7 @@ library(tidyverse)
 cancer <- read_csv("data/cancer.csv")
 
 glimpse(cancer)
+view(cancer)
 ```
 
 # Data 2
@@ -193,4 +194,5 @@ glimpse(police_shootings)
 opioids <- read_csv("data/opioids.csv")
 
 glimpse(opioids)
+view(opioids)
 ```
