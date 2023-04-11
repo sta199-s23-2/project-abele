@@ -28,6 +28,12 @@ References
 
 **Methodology**
 
+-   We plan to answer our research question by visualizing the relationship between certain factors and the prevalence of police shootings on various plots whilst grouping by race. This will enable us to discern whether certain races when paired with certain factors lead to a higher or lower prevalence of police shootings.
+
+-   Prediction -- We predict that race will have a statistically significant impact on the relationship between various factors and the prevalence of police shootings. Due to factors like racism in the criminal justice system, we hypothesize that certain races will be disproportionately more likely to be victims of police shootings.
+
+-   Inference -- We infer that it will be more difficult to discern the disproportionality of how certain races are affected because we have yet to adjust for the proportion of each race in relation to total population.
+
 ```{r}
 #| label: load-data
 #| message: false
