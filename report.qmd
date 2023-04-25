@@ -30,12 +30,6 @@ We hypothesize that there is a statistically significant relationship between th
 
 We hope that our findings will encourage the urgent need to address the intersections of race, mental health, and other factors when it comes to police use of force. It is crucial that law enforcement officers receive proper training in de-escalation techniques and crisis intervention. Additionally, addressing the root causes of mental health disparities and systemic racism is necessary to prevent tragic outcomes and promote equity and justice. This research is crucial not only for protecting the lives and well-being of citizens but also for building stronger, more equitable, and more just societies. By studying police shootings and identifying ways to prevent them, we can work toward a safer, more peaceful future for all.\
 
-References
-
-1.  DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013--2021. Race and Justice, 0(0). <https://doi.org/10.1177/21533687211047943>
-
-2.  "The Washington Post's Police Shootings Database." The Washington Post, WP Company LLC, 2021, [www.washingtonpost.com/graphics/investigations/police-shootings-database/](http://www.washingtonpost.com/graphics/investigations/police-shootings-database/).\
-
 **Methodology**
 
 -   We plan to answer our research question by visualizing the relationship between certain factors and the prevalence of police shootings on various plots whilst grouping by race. This will enable us to discern whether certain races when paired with certain factors lead to a higher or lower prevalence of police shootings.
@@ -160,3 +154,9 @@ Graph interpretation: The first graph shows the correlation between victim age a
 Graph 2: In our second graph we investigated the relationship between race and shootings more specifically. Just as our last graph indicated, African Americans are significantly affected more by police shootings than any other race, having approximately 1000 shootings per year between 2015-2020. In addition, Asians were not too far behind with 750 shootings per year. It is also worth noting that the total number of shootings fell significantly in 2021, and this was likely in reaction to the Black Lives Matter movement. The number of African Americans who experience police shootings fell most dramatically - this makes sense given that the movement surrounded around the biased shootings towards African Americans. This all suggests that race is a very significant factor in police shootings, more so than age.
 
 Graph 3: The third graph demonstrates that location is a crucial factor when it comes to shootings. White people from the states CO, CT and DC are on average more prone to be targets. IL, ID and IA are also significant states where shootings occur.
+
+References
+
+1.  DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013--2021. Race and Justice, 0(0). <https://doi.org/10.1177/21533687211047943>
+
+2.  "The Washington Post's Police Shootings Database." The Washington Post, WP Company LLC, 2021, [www.washingtonpost.com/graphics/investigations/police-shootings-database/](http://www.washingtonpost.com/graphics/investigations/police-shootings-database/).\
