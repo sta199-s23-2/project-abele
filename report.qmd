@@ -52,30 +52,6 @@ view(police_shootings)
 ```
 
 ```{r}
-#| label: age-prevalence
-
-police_shootings |>
-  filter(Person.Age>0) |>
-  ggplot(aes(x=Person.Age, color = Person.Race)) +
-  geom_bar() +
-  labs(title = "Relationship Between Victim Age, Race, and Prevalence of Police 
-       Shooting", x= "Victim Age", y = "Number of Reported Shootings", 
-       legend = "Race")
-
-```
-
-```{r}
-#| label: shootings-over-time
-police_shootings |>
-  ggplot(aes(x=Incident.Date.Year, fill = Person.Race)) +
-  geom_bar() + 
-  labs(title = "Relationship Between Race, Year, and Prevalence of Police 
-       Shooting", x= "Year", y = "Number of Reported Shootings", 
-       legend = "Race")
-
-```
-
-```{r}
 library(tidyverse)
 library(recipes)
 library(modelr)
@@ -198,6 +174,28 @@ predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num
 predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 3))
 predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 4))
 
+```
+
+```{r}
+#| label: age-prevalence
+
+police_shootings |>
+  filter(Person.Age>0) |>
+  ggplot(aes(x=Person.Age, color = Person.Race)) +
+  geom_bar() +
+  labs(title = "Relationship Between Victim Age, Race, and Prevalence of Police 
+       Shooting", x= "Victim Age", y = "Number of Reported Shootings", 
+       legend = "Race")
+```
+
+```{r}
+#| label: shootings-over-time
+police_shootings |>
+  ggplot(aes(x=Incident.Date.Year, fill = Person.Race)) +
+  geom_bar() + 
+  labs(title = "Relationship Between Race, Year, and Prevalence of Police 
+       Shooting", x= "Year", y = "Number of Reported Shootings", 
+       legend = "Race")
 ```
 
 **Results**
