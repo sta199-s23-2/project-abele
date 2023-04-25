@@ -200,13 +200,21 @@ police_shootings |>
 
 **Results**
 
-We are investigating and determining which of these factors (race, age, location, presence of mental illness) has the most impact on shootings in the United States.
+We are investigating and determining the impact of these factors (race, age, and region) on perceived threat level of an individual in police violence in the United States.
 
-Graph interpretation: The first graph shows the correlation between victim age and number of reported shootings. Victims who are between the ages of 25-37 years appear to experience the highest prevalence of police shootings. Indeed, the number of people between these ages are significantly more affected than people older and younger, indicating that age is an important factor. However, across the whole spectrum of ages, it is also clear that people of African American race are more disproportionately affected, suggesting that race is also a significant factor in determining the prevalence of police shootings.
+First, we will discuss interpretations of our three visualizations.
 
-Graph 2: In our second graph we investigated the relationship between race and shootings more specifically. Just as our last graph indicated, African Americans are significantly affected more by police shootings than any other race, having approximately 1000 shootings per year between 2015-2020. In addition, Asians were not too far behind with 750 shootings per year. It is also worth noting that the total number of shootings fell significantly in 2021, and this was likely in reaction to the Black Lives Matter movement. The number of African Americans who experience police shootings fell most dramatically - this makes sense given that the movement surrounded around the biased shootings towards African Americans. This all suggests that race is a very significant factor in police shootings, more so than age.
+The first graph \_\_\_
 
-Graph 3: The third graph demonstrates that location is a crucial factor when it comes to shootings. White people from the states CO, CT and DC are on average more prone to be targets. IL, ID and IA are also significant states where shootings occur.
+The second graph shows the correlation between victim age and number of reported shootings. Victims who are between the ages of 25-37 years appear to experience the highest prevalence of police shootings. Indeed, the number of people between these ages are significantly more affected than people older and younger, indicating that age is an important factor. However, across the whole spectrum of ages, it is also clear that people of African American race are more disproportionately affected, suggesting that race is also a significant factor in determining the prevalence of police shootings.
+
+In our third graph, we investigated the relationship between race and shootings more specifically. Just as our last graph indicated, African Americans are significantly affected more by police shootings than any other race, having approximately 1000 shootings per year between 2015-2020. In addition, Asians were not too far behind with 750 shootings per year. It is also worth noting that the total number of shootings fell significantly in 2021, and this was likely in reaction to the Black Lives Matter movement. The number of African Americans who experience police shootings fell most dramatically - this makes sense given that the movement surrounded around the biased shootings towards African Americans. This all suggests that race is a very significant factor in police shootings, more so than age.
+
+Next, we investigated the individual effects of each variable, utilizing the predict function. Our predict model investigating race produced fairly inconclusive results, but this can in part be explained by the disproportionate racial population distribution. The perceived threat levels were all fairly similar, with 3.62426 for White, 3.597684 for Black, 3.571108 for Hispanic, 3.544532 for Asian, and 3.517956 for Hispanic. However, when we consider sample sizes differences due to discrepancies in population, this highlights that we do not conclude that White people are more likely to be perceived as a threat than racial minorities.
+
+Next, we investigated age, employing an average race and region numeric value to hold those factors constant. I based test ages around the mean, which was 35, utilizing 25, 35, and 45. We found a consistent increase in perceived threat level alongside age, increasing from 3.58574 at 25, to 3.605667 at 35, to 3.625595 at 45.
+
+Finally, we investigated region, holding race and age constant. Though the numbers were fairly consistent, we found individuals in the West and South to be the least likely to be perceived as a threat, with levels of 3.591395 and 3.605866 respectively. Individuals from the Midwest and Northeast were most likely to be perceived as a threat, with levels of 3.634807 and 3.620336 respectively.
 
 References
 
