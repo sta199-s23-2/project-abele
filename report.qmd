@@ -32,9 +32,11 @@ We hope that our findings will encourage the urgent need to address the intersec
 
 **Methodology**
 
-To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = attack, 2 = other, 3 = undetermined, 4 = unknown). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
+To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
 
 For visualizations, we aimed to create one to specifically examine and isolate the study of each one of our explanatory variables: race, region, and age. We examined perceived threat level across regions and races.
+
+Next, we utilized the calculation of summary statistics and the predict function to isolate the effects of each explanatory variable (race, region, and age) on perceived threat level. We calculated a summary statistic to estimate the true mean of each response variable. Next, using the predict function, we utilized these means to simulate an otherwise 'average' individual in a shooting, only changing one variable at a time. For example, we simulated each separate race in a citizen with an average age and region.
 
 ```{r}
 #| label: load-data
@@ -108,8 +110,7 @@ police_shootings1 <- police_shootings |>
 # fit linear regression model
 model <- linear_reg() |>
   set_engine("lm") |>
-  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) |>
-  tidy()
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) 
 
 # display model coefficients
 model
@@ -117,7 +118,7 @@ model
 
 ```
 
-$\widehat{threat\_level\_num} = 1.377 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num$
+$\widehat{threat\_level\_num} = 3.6231 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num$
 
 threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}
 
@@ -168,7 +169,35 @@ police_shootings1 |>
 #| label: sum-stat-threat
 
 police_shootings1 |>
-  summarize(mean_threatlvl = mean(threat_level_num, na.rm = T)) 
+  summarize(mean_threatlvl = mean(threat_level_num, na.rm = T))
+```
+
+```{r}
+#| label: predict-race
+predict(model, data.frame(race_num = 1, Person.Age = 35.38469, region_num = 2.960725))
+predict(model, data.frame(race_num = 2, Person.Age = 35.38469, region_num = 2.960725))
+predict(model, data.frame(race_num = 3, Person.Age = 35.38469, region_num = 2.960725))
+predict(model, data.frame(race_num = 4, Person.Age = 35.38469, region_num = 2.960725))
+predict(model, data.frame(race_num = 5, Person.Age = 35.38469, region_num = 2.960725))
+
+
+```
+
+```{r}
+#| label: predict-age
+predict(model, data.frame(race_num = 1.670755, Person.Age = 25, region_num = 2.960725))
+predict(model, data.frame(race_num = 1.670755, Person.Age = 35, region_num = 2.960725))
+predict(model, data.frame(race_num = 1.670755, Person.Age = 45, region_num = 2.960725))
+
+```
+
+```{r}
+#| label: predict-region
+predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 1))
+predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 2))
+predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 3))
+predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 4))
+
 ```
 
 **Results**
