@@ -143,6 +143,34 @@ police_shootings1 |>
 
 ```
 
+```{r}
+#| label: sum-stat-race
+
+police_shootings1 |>
+  summarize(mean_race = mean(race_num, na.rm = T)) 
+```
+
+```{r}
+#| label: sum-stat-age
+
+police_shootings1 |>
+  summarize(mean_age = mean(Person.Age, na.rm = T)) 
+```
+
+```{r}
+#| label: sum-stat-region
+
+police_shootings1 |>
+  summarize(mean_region = mean(region_num, na.rm = T)) 
+```
+
+```{r}
+#| label: sum-stat-threat
+
+police_shootings1 |>
+  summarize(mean_threatlvl = mean(threat_level_num, na.rm = T)) 
+```
+
 **Results**
 
 We are investigating and determining which of these factors (race, age, location, presence of mental illness) has the most impact on shootings in the United States.
