@@ -6,8 +6,7 @@ editor: visual
 
 This project was developed by **ABELE** For [STA 199: Introduction to Data Science](https://sta199-s23-2.github.io/) at Duke University. The team is comprised of the following team members.
 
--   Team member 1: Chloe Van Voorhis is a first-year from San Francisco, California looking to major in Public Policy.
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
--   ...
+-   Team member 1: Chloe Van Voorhis is a first-year student from San Francisco, California looking to major in Public Policy.
+-   Team member 2: Madeleine Dean is a first-year student from London, UK also looking to major in Public Policy.
+-   Team member 3: Taira Bhargava is a second-year student from New Delhi, India and is majoring in Human Biology.
+-   Team member 4: Kidest Wolde is a third-year student from New York and is majoring in Philosophy.
