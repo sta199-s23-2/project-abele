@@ -90,7 +90,7 @@ library(tidyverse)
 library(recipes)
 library(modelr)
 
-police_shootings <- police_shootings |>
+police_shootings1 <- police_shootings |>
   mutate(region = case_when(
     Incident.Location.State %in% c("ME", "VT", "NH", "MA", "RI", "CT", "NY", "PA", "NJ") ~ "Northeast",
     Incident.Location.State %in% c("WI", "MI", "IL", "IN", "OH", "ND", "SD", "NE", "KS", "MN", "IA", "MO") ~ "Midwest",
@@ -116,7 +116,7 @@ police_shootings <- police_shootings |>
 # fit linear regression model
 model <- linear_reg() |>
   set_engine("lm") |>
-  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings) |>
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) |>
   tidy()
 
 # display model coefficients
@@ -127,13 +127,31 @@ model
 
 $\widehat{threat\_level\_num} = 1.377 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num$
 
-threat_level_num: {1 if unnkown; 2 if undetermined; 3 if other; 4 if attack}
+threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}
 
 region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
 
 race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}
 
-**Results**\
+```{r}
+#| label: visualization
+
+police_shootings1 |>
+ ggplot(aes(x = region, fill = as.factor(race_num))) +
+  geom_bar(position = "stack") +
+  labs(title = "Perceived Threat Level by Race and Region",
+       x = "Region",
+       y = "Count",
+       fill = "Race") +
+  scale_fill_discrete(name = "Race",
+                      labels = c("White", "Black", "Hispanic", "Asian", "Native American")) +
+  facet_wrap(~ factor(ifelse(threat_level_num == 2, "Undetermined", ifelse(threat_level_num == 3, "Other", ifelse(threat_level_num == 4, "Attack", NA)))), scales = "free_y") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+**Results**
 
 We are investigating and determining which of these factors (race, age, location, presence of mental illness) has the most impact on shootings in the United States.
 
