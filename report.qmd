@@ -1,5 +1,5 @@
 ---
-title: "Factors Influencing the Prevalence of Police Shootings in the United States"
+title: "Factors Influencing the Perceieved Threat of an Individual in Police Shootings in the United States"
 subtitle: "Report"
 format: html
 editor: visual
@@ -7,7 +7,7 @@ execute:
   echo: true
 ---
 
-**Research Question:** How does race, age, location, presence of mental illness, and other factors impact the prevalence of police shootings in the United States?
+**Research Question:** How does race, region, and age affect the perceived threat level of an individual in a police shooting in the United States?
 
 **Introduction/Data**\
 Police shootings have become a pressing issue in many parts of the world, with incidents of excessive use of force by law enforcement officers making headlines and sparking widespread outrage. The consequences of police shootings can be severe, resulting in injury or death for the individuals involved and causing long-lasting trauma for their families and communities. Moreover, the use of lethal force by police can erode public trust in law enforcement and lead to social unrest, protests, and even riots. In recent years, there has been growing recognition of the urgent need to understand the root causes of police shootings and to develop effective strategies for minimizing their occurrence. 
@@ -32,7 +32,7 @@ We hope that our findings will encourage the urgent need to address the intersec
 
 **Methodology**
 
-	To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = attack, 2 = other, 3 = undetermined, 4 = unknown). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
+To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = attack, 2 = other, 3 = undetermined, 4 = unknown). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
 
 For visualizations, we aimed to create one to specifically examine and isolate the study of each one of our explanatory variables: race, region, and age. We examined perceived threat level across regions and races.
 
