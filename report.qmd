@@ -54,6 +54,10 @@ police_shootings <- read_csv("data/police_shootings.csv")
 ```
 
 ```{r}
+view(police_shootings)
+```
+
+```{r}
 #| label: age-prevalence
 
 police_shootings |>
@@ -74,26 +78,7 @@ police_shootings |>
   labs(title = "Relationship Between Race, Year, and Prevalence of Police 
        Shooting", x= "Year", y = "Number of Reported Shootings", 
        legend = "Race")
-  
-```
 
-```{r}
-#| label: location-race
-#| fig-width: 30
-police_shootings |>
-  ggplot(aes(x = Incident.Location.State, fill = Person.Race)) +
-  geom_bar() +
-  labs(title = "Relationship Between State, Race, and Prevalence of Police 
-       Shooting", x= "State", y = "Number of Reported Shootings", 
-       legend = "Race")
-
-```
-
-```{r}
-#| label: mental illness-race
-police_shootings |>
-  ggplot(aes(x= Person.Race , fill=Incident.Location.State)) +
-  geom_bar() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 \*\* Results \*\*
