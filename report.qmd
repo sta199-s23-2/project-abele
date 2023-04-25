@@ -99,28 +99,35 @@ police_shootings <- police_shootings |>
     TRUE ~ "Unknown"
   )) |>
   mutate(race_num = case_when(
-             Person.Race == "White" ~ 1,
-             Person.Race == "Black" ~ 2,
-             Person.Race == "Hispanic" ~ 3,
-             Person.Race == "Asian" ~ 4,
-             Person.Race == "Native American" ~ 5),
-         region_num = as.numeric(factor(region)),
-         threat_level_num = as.numeric(factor(`Factors.Threat-Level`)))
+    Person.Race == "White" ~ 1,
+    Person.Race == "Black" ~ 2,
+    Person.Race == "Hispanic" ~ 3,
+    Person.Race == "Asian" ~ 4,
+    Person.Race == "Native American" ~ 5),
+    region_num = as.numeric(factor(region)),
+    threat_level_num = case_when(
+      `Factors.Threat-Level` == "unknown" ~ 1,
+      `Factors.Threat-Level` == "undetermined" ~ 2,
+      `Factors.Threat-Level` == "other" ~ 3,
+      `Factors.Threat-Level` == "attack" ~ 4
+    )
+  )
 
 # fit linear regression model
 model <- linear_reg() |>
   set_engine("lm") |>
-  fit(`threat_level_num` ~ race_num + Person.Age + region_num, data = police_shootings) |>
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings) |>
   tidy()
 
 # display model coefficients
 model
 
+
 ```
 
 $\widehat{threat\_level\_num} = 1.377 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num$
 
-threat_level_num: {1 if attack; 2 if other; 3 if undetermined; 4 if unknown}
+threat_level_num: {1 if unnkown; 2 if undetermined; 3 if other; 4 if attack}
 
 region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
 

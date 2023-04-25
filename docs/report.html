@@ -269,43 +269,49 @@ Attaching package: 'modelr'</code></pre>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(recipes)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelr)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> police_shootings <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> police_shootings <span class="sc">|&gt;</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">case_when</span>(</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ME"</span>, <span class="st">"VT"</span>, <span class="st">"NH"</span>, <span class="st">"MA"</span>, <span class="st">"RI"</span>, <span class="st">"CT"</span>, <span class="st">"NY"</span>, <span class="st">"PA"</span>, <span class="st">"NJ"</span>) <span class="sc">~</span> <span class="st">"Northeast"</span>,</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"WI"</span>, <span class="st">"MI"</span>, <span class="st">"IL"</span>, <span class="st">"IN"</span>, <span class="st">"OH"</span>, <span class="st">"ND"</span>, <span class="st">"SD"</span>, <span class="st">"NE"</span>, <span class="st">"KS"</span>, <span class="st">"MN"</span>, <span class="st">"IA"</span>, <span class="st">"MO"</span>) <span class="sc">~</span> <span class="st">"Midwest"</span>,</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"MT"</span>, <span class="st">"ID"</span>, <span class="st">"WY"</span>, <span class="st">"CO"</span>, <span class="st">"NM"</span>, <span class="st">"AZ"</span>, <span class="st">"UT"</span>, <span class="st">"NV"</span>, <span class="st">"CA"</span>, <span class="st">"OR"</span>, <span class="st">"WA"</span>, <span class="st">"AK"</span>, <span class="st">"HI"</span>) <span class="sc">~</span> <span class="st">"West"</span>,</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"TX"</span>, <span class="st">"OK"</span>, <span class="st">"AR"</span>, <span class="st">"LA"</span>, <span class="st">"MS"</span>, <span class="st">"AL"</span>, <span class="st">"TN"</span>, <span class="st">"KY"</span>, <span class="st">"GA"</span>, <span class="st">"FL"</span>, <span class="st">"SC"</span>, <span class="st">"NC"</span>, <span class="st">"VA"</span>, <span class="st">"WV"</span>, <span class="st">"MD"</span>, <span class="st">"DE"</span>, <span class="st">"DC"</span>) <span class="sc">~</span> <span class="st">"South"</span>,</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race_num =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>             Person.Race <span class="sc">==</span> <span class="st">"White"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>             Person.Race <span class="sc">==</span> <span class="st">"Black"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>             Person.Race <span class="sc">==</span> <span class="st">"Hispanic"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>             Person.Race <span class="sc">==</span> <span class="st">"Asian"</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>             Person.Race <span class="sc">==</span> <span class="st">"Native American"</span> <span class="sc">~</span> <span class="dv">5</span>),</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">region_num =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(region)),</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">threat_level_num =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(<span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span>)))</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co"># fit linear regression model</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(<span class="st">`</span><span class="at">threat_level_num</span><span class="st">`</span> <span class="sc">~</span> race_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings) <span class="sc">%&gt;%</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"White"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Black"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Hispanic"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Asian"</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Native American"</span> <span class="sc">~</span> <span class="dv">5</span>),</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">region_num =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(region)),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">threat_level_num =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"unknown"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"undetermined"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"attack"</span> <span class="sc">~</span> <span class="dv">4</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co"># display model coefficients</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co"># fit linear regression model</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> race_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings) <span class="sc">|&gt;</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co"># display model coefficients</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 5
-  term        estimate std.error statistic   p.value
-  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
-1 (Intercept)  1.38     0.0374       36.8  1.37e-257
-2 race_num     0.0266   0.00816       3.26 1.14e-  3
-3 Person.Age  -0.00199  0.000614     -3.25 1.18e-  3
-4 region_num   0.0145   0.00827       1.75 8.01e-  2</code></pre>
+  term        estimate std.error statistic p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)  3.62     0.0374       96.9  0      
+2 race_num    -0.0266   0.00816      -3.26 0.00114
+3 Person.Age   0.00199  0.000614      3.25 0.00118
+4 region_num  -0.0145   0.00827      -1.75 0.0801 </code></pre>
 </div>
 </div>
 <p><span class="math inline">\(\widehat{threat\_level\_num} = 1.377 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num\)</span></p>
-<p>threat_level_num: {1 if attack; 2 if other; 3 if undetermined; 4 if unknown}</p>
+<p>threat_level_num: {1 if unnkown; 2 if undetermined; 3 if other; 4 if attack}</p>
 <p>region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}</p>
 <p>race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}</p>
 <p><strong>Results</strong><br>
