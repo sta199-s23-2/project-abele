@@ -32,11 +32,9 @@ We hope that our findings will encourage the urgent need to address the intersec
 
 **Methodology**
 
--   We plan to answer our research question by visualizing the relationship between certain factors and the prevalence of police shootings on various plots whilst grouping by race. This will enable us to discern whether certain races when paired with certain factors lead to a higher or lower prevalence of police shootings.
+	To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = attack, 2 = other, 3 = undetermined, 4 = unknown). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
 
--   Prediction -- We predict that race will have a statistically significant impact on the relationship between various factors and the prevalence of police shootings. Due to factors like racism in the criminal justice system, we hypothesize that certain races will be disproportionately more likely to be victims of police shootings.
-
--   Inference -- We infer that it will be more difficult to discern the disproportionality of how certain races are affected because we have yet to adjust for the proportion of each race in relation to total population.
+For visualizations, we aimed to create one to specifically examine and isolate the study of each one of our explanatory variables: race, region, and age. We examined perceived threat level across regions and races.
 
 ```{r}
 #| label: load-data
