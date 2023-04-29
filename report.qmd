@@ -40,7 +40,11 @@ We thought this literature would be relevant to our research question as every o
 
 **Methodology**
 
-To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
+To investigate the way in which race, age, and region in police shootings impact perceived threat level, we first reorganized the data set by sorting it into different American regions and by assigning the races and threat levels different numbers so that we could turn them into numeric variables.
+
+We then
+
+constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
 
 For visualizations, we aimed to create one to specifically examine and isolate the study of each one of our explanatory variables: race, region, and age. We examined perceived threat level across regions and races.
 
@@ -51,22 +55,15 @@ Next, we utilized the calculation of summary statistics and the predict function
 #| message: false
 library(tidyverse)
 library(tidymodels)
+library(recipes)
+library(modelr)
+
 police_shootings <- read_csv("data/police_shootings.csv")
 
 ```
 
 ```{r}
-view(police_shootings)
-```
-
-```{r}
-library(tidyverse)
-library(recipes)
-library(modelr)
-
-library(tidyverse)
-library(recipes)
-library(modelr)
+#| label: police-shootings-1
 
 police_shootings1 <- police_shootings |>
   mutate(region = case_when(
@@ -91,24 +88,7 @@ police_shootings1 <- police_shootings |>
     )
   )
 
-# fit linear regression model
-model <- linear_reg() |>
-  set_engine("lm") |>
-  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) 
-
-# display model coefficients
-model
-
-
 ```
-
-$\widehat{threat\_level\_num} = 3.6231 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num$
-
-threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}
-
-region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
-
-race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}
 
 ```{r}
 #| label: visualization
@@ -127,6 +107,36 @@ police_shootings1 |>
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 ```
+
+```{r}
+#| label: shootings-over-time
+police_shootings |>
+  ggplot(aes(x=Incident.Date.Year, fill = Person.Race)) +
+  geom_bar() + 
+  labs(title = "Relationship Between Race, Year, and Prevalence of Police 
+       Shooting", x= "Year", y = "Number of Reported Shootings", 
+       legend = "Race")
+```
+
+```{r}
+#| label: linear-reg
+
+model <- linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) 
+
+model
+
+
+```
+
+$\widehat{threat\_level\_num} = 3.6231 - 0.0266 * race\_num - 0.0019927 * Person.Age - 0.01447 * region\_num$
+
+threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}
+
+region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
+
+race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}
 
 ```{r}
 #| label: sum-stat-race
@@ -184,31 +194,7 @@ predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num
 
 ```
 
-```{r}
-#| label: age-prevalence
-
-police_shootings |>
-  filter(Person.Age>0) |>
-  ggplot(aes(x=Person.Age, color = Person.Race)) +
-  geom_bar() +
-  labs(title = "Relationship Between Victim Age, Race, and Prevalence of Police 
-       Shooting", x= "Victim Age", y = "Number of Reported Shootings", 
-       legend = "Race")
-```
-
-```{r}
-#| label: shootings-over-time
-police_shootings |>
-  ggplot(aes(x=Incident.Date.Year, fill = Person.Race)) +
-  geom_bar() + 
-  labs(title = "Relationship Between Race, Year, and Prevalence of Police 
-       Shooting", x= "Year", y = "Number of Reported Shootings", 
-       legend = "Race")
-```
-
 **Results**
-
-We are investigating and determining the impact of these factors (race, age, and region) on perceived threat level of an individual in police violence in the United States.
 
 First, we will discuss interpretations of our three visualizations.
 
