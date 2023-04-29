@@ -1,8 +1,8 @@
 ---
-title: "TEAM NAME"
+title: "ABELE"
 subtitle: "STA 199 Project"
 format: html
 editor: visual
 ---
 
-Add project abstract here.
+Our data analysis explores how race, region, and age impact the perceived threat level of individuals in police shootings in the United States. Using data sorted by American regions and numerical variables for race, region, and perceived threat level, we conducted a linear regression analysis and created visualizations to examine the relationship between these variables. From our findings, we were only able to obtain conclusive results regarding how two of our explanatory variables is a predictor for our response variable, perceived threat level. Age and region returned statistically significant results, whereas race did not. While our results did not find any significant relationships between the explanatory and response variables, it is crucial to continue investigating the root causes and contributing factors of police shootings in order to minimize these avoidable and often fatal events.
