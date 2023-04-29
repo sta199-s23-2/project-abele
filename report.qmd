@@ -164,9 +164,11 @@ police_shootings2 <- police_shootings1 |>
     Factors.Fleeing == "Foot" ~ 3,
     Factors.Fleeing == "Car" ~ 4))
 
-linear_reg() |>
+model2 <-linear_reg() |>
   set_engine("lm") |>
   fit(threat_level_num ~ fleeing_num + Person.Age + region_num, data = police_shootings2)
+
+model2
 ```
 
 $\widehat{threat\_level\_num} = 3.635346 - 0.001953 * fleeing\_num - 0.001736 * Person.Age - 0.024324 * region\_num$
@@ -211,6 +213,23 @@ linear_reg() |>
   fit(threat_level_num ~ fleeing_num + Person.Age + region_num, data = police_shootings2) |>
   glance() |>
   pull(adj.r.squared)
+```
+
+```{r}
+library(ggplot2)
+
+model3 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1)
+
+predict_model <- police_shootings1 |>
+  mutate(myPrediction = predict(model, police_shootings1)$.pred)
+
+predict_model |>
+  ggplot(aes(x = threat_level_num, y = myPrediction)) +
+  geom_point() +
+  labs(x = "True Body Mass", y = "Predicted Body Mass", title = "Predicted vs True Body Mass") +
+  geom_abline(slope = 1, intercept = 0, color = "steelblue")
 ```
 
 ```{r}
@@ -293,7 +312,7 @@ Finally, we investigated region, holding race and age constant. Though the numbe
 
 In summary, we were only able to obtain conclusive results regarding how one of our explanatory variables is a predictor for our response variable, perceived threat level. Age returned statistically significant results, whereas race and location (United States region) did not. Based on our predict function, perceived threat level consistently and steadily increased as age increased, from 3.58574 at age 25, to 3.605667 at age 35, to 3.625595 at age 45. This depicts that age is positively correlated with perceived threat level, proving our previous hypothesis about their relationship to be correct. Conversely, perceived threat level was fairly constant across race and regions, leaving us with no clear answer to how these variables predict threat level. 
 
-In regards to our analysis, a limitation of our work is how we quantified the threat level perceived. In the data set, the categories for threat level are \"attack\", \"undetermined\", \"other\", and \"unknown.\" We decided to quantify 1 as \"unknown,\" 2 as \"undetermined,\" 3 as \"other,\" and 4 as \"attack.\" There are evidently many inherent ambiguities present in this categorization, and so we had to make a few educated assumptions in order to best quantify threat level. \"Attack\" is clearly the highest perceived threat level, but after that the level of threat is slightly ambiguous. \"Other\" implies the existence of a threat, which is why we categorized it as a 3. \"Undetermined\" and \"unknown\" were the most ambiguous, but we reasoned that \"undetermined\" implied the potential for a perceived threat, whereas \"unknown\" implied that a perceived threat was seemingly irrelevant or that there was less confidence that a threat was perceived. Thus, while we categorized the threat levels to the best of our abilities, there are definitely some inherent limitations present and these may have altered the results of our model, visualizations, and predictions. 
+In regards to our analysis, a limitation of our work is how we quantified the threat level perceived. In the data set, the categories for threat level are "attack", "undetermined", "other", and "unknown." We decided to quantify 1 as "unknown," 2 as "undetermined," 3 as "other," and 4 as "attack." There are evidently many inherent ambiguities present in this categorization, and so we had to make a few educated assumptions in order to best quantify threat level. "Attack" is clearly the highest perceived threat level, but after that the level of threat is slightly ambiguous. "Other" implies the existence of a threat, which is why we categorized it as a 3. "Undetermined" and "unknown" were the most ambiguous, but we reasoned that "undetermined" implied the potential for a perceived threat, whereas "unknown" implied that a perceived threat was seemingly irrelevant or that there was less confidence that a threat was perceived. Thus, while we categorized the threat levels to the best of our abilities, there are definitely some inherent limitations present and these may have altered the results of our model, visualizations, and predictions. 
 
 In terms of limitations pertaining to the data used, our data contained information primarily from The Washington Post, and since it is a mainstream media report we think it might be inaccurate or erroneous. Media credibility frequently diminishes when stories are layered with clickbait or crucial pieces of information are left out in order to make the story more enticing. Furthermore, because not all police shootings in the United States are covered by the media, the data set might not be entirely representative of all such incidents. Lastly, since the data set does not contain information on the specifics of the incident or the conduct of the parties involved, thus there may be additional factors that influence the occurrence of police shootings that were not taken into account in this analysis which may have skewed the results.
 

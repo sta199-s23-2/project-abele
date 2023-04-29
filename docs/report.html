@@ -321,9 +321,11 @@ Coefficients:
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    Factors.Fleeing <span class="sc">==</span> <span class="st">"Foot"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    Factors.Fleeing <span class="sc">==</span> <span class="st">"Car"</span> <span class="sc">~</span> <span class="dv">4</span>))</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> fleeing_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> fleeing_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings2)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>model2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>parsnip model object
 
@@ -382,8 +384,30 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_race =</span> <span class="fu">mean</span>(race_num, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> race_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings1)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>predict_model <span class="ot">&lt;-</span> police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">myPrediction =</span> <span class="fu">predict</span>(model, police_shootings1)<span class="sc">$</span>.pred)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>predict_model <span class="sc">|&gt;</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> threat_level_num, <span class="at">y =</span> myPrediction)) <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"True Body Mass"</span>, <span class="at">y =</span> <span class="st">"Predicted Body Mass"</span>, <span class="at">title =</span> <span class="st">"Predicted vs True Body Mass"</span>) <span class="sc">+</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2329 rows containing missing values (`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_race =</span> <span class="fu">mean</span>(race_num, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_race
@@ -392,8 +416,8 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Person.Age, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Person.Age, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_age
@@ -402,8 +426,8 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_region =</span> <span class="fu">mean</span>(region_num, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_region =</span> <span class="fu">mean</span>(region_num, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_region
@@ -412,8 +436,8 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_threatlvl =</span> <span class="fu">mean</span>(threat_level_num, <span class="at">na.rm =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_threatlvl =</span> <span class="fu">mean</span>(threat_level_num, <span class="at">na.rm =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_threatlvl
@@ -422,35 +446,35 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">1</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">1</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.62</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">2</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">2</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.60</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">3</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">3</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.57</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">4</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">4</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.54</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">5</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">5</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
@@ -459,21 +483,21 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">25</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">25</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.59</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">35</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">35</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.61</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">45</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">45</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
@@ -482,28 +506,28 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.63</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.62</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
   &lt;dbl&gt;
 1  3.61</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   .pred
@@ -523,6 +547,10 @@ Coefficients:
 <p>Next, we investigated age, employing an average race and region numeric value to hold those factors constant. I based test ages around the mean, which was 35, utilizing 25, 35, and 45. We found a consistent increase in perceived threat level alongside age, increasing from 3.58574 at 25, to 3.605667 at 35, to 3.625595 at 45.</p>
 <p>Finally, we investigated region, holding race and age constant. Though the numbers were fairly consistent, we found individuals in the West and South to be the least likely to be perceived as a threat, with levels of 3.591395 and 3.605866 respectively. Individuals from the Midwest and Northeast were most likely to be perceived as a threat, with levels of 3.634807 and 3.620336 respectively.</p>
 <p><strong>Discussion</strong></p>
+<p>In summary, we were only able to obtain conclusive results regarding how one of our explanatory variables is a predictor for our response variable, perceived threat level. Age returned statistically significant results, whereas race and location (United States region) did not. Based on our predict function, perceived threat level consistently and steadily increased as age increased, from 3.58574 at age 25, to 3.605667 at age 35, to 3.625595 at age 45. This depicts that age is positively correlated with perceived threat level, proving our previous hypothesis about their relationship to be correct. Conversely, perceived threat level was fairly constant across race and regions, leaving us with no clear answer to how these variables predict threat level.&nbsp;</p>
+<p>In regards to our analysis, a limitation of our work is how we quantified the threat level perceived. In the data set, the categories for threat level are “attack”, “undetermined”, “other”, and “unknown.” We decided to quantify 1 as “unknown,” 2 as “undetermined,” 3 as “other,” and 4 as “attack.” There are evidently many inherent ambiguities present in this categorization, and so we had to make a few educated assumptions in order to best quantify threat level. “Attack” is clearly the highest perceived threat level, but after that the level of threat is slightly ambiguous. “Other” implies the existence of a threat, which is why we categorized it as a 3. “Undetermined” and “unknown” were the most ambiguous, but we reasoned that “undetermined” implied the potential for a perceived threat, whereas “unknown” implied that a perceived threat was seemingly irrelevant or that there was less confidence that a threat was perceived. Thus, while we categorized the threat levels to the best of our abilities, there are definitely some inherent limitations present and these may have altered the results of our model, visualizations, and predictions.&nbsp;</p>
+<p>In terms of limitations pertaining to the data used, our data contained information primarily from The Washington Post, and since it is a mainstream media report we think it might be inaccurate or erroneous. Media credibility frequently diminishes when stories are layered with clickbait or crucial pieces of information are left out in order to make the story more enticing. Furthermore, because not all police shootings in the United States are covered by the media, the data set might not be entirely representative of all such incidents. Lastly, since the data set does not contain information on the specifics of the incident or the conduct of the parties involved, thus there may be additional factors that influence the occurrence of police shootings that were not taken into account in this analysis which may have skewed the results.</p>
+<p>To counter these limitations and in terms of future work, additional research can be conducted to look into further factors that affect police shootings, such as police training and how they are prepared to react in high-stress circumstances, policies, the sort of weapon they are allowed to use, and protocols. In order to gain a greater understanding of the scale of the problem and spot trends, it would also be advantageous to gather more detailed and precise information on police shootings. This would entail gathering information on not just the amount of shootings but also the specifics of each occurrence, including the victim’s and officer’s age, gender, race, and ethnicity, the incident’s location and time of day, and the eventual outcome of the incident.</p>
 <p>References</p>
 <ol type="1">
 <li><p>DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013–2021. Race and Justice, 0(0). <a href="https://doi.org/10.1177/21533687211047943" class="uri">https://doi.org/10.1177/21533687211047943</a></p></li>
