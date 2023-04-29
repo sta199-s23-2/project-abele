@@ -40,6 +40,8 @@ We thought this literature would be relevant to our research question as every o
 
 **Methodology**
 
+To begin our investigations, we tested 2 additive linear regression models to see which would most effectively predict perceived threat level. We tested using the explanatory variables of race, region, and age, and another model using the explanatory variables of fleeing, region, and age. We found the model using race, region, and age to be a better predictor of threat level because it had a lower AIC and a higher r-squared, and thus decided to move forward using this model.
+
 To investigate the way in which race, age, and region in police shootings impact perceived threat level, we first reorganized the data set by sorting it into different American regions. We then changed some of the variables from categorical to numerical variables. To be more specific, we first mutated race into a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We subsequently mutated the regions into numeric variables too (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we did the same for perceived threat level (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). This is so we could more easily manipulate the data.
 
 We then created a set of visualizations to help answer our question. We first made a bar chart looking at how the perceived threat level of an individual differed by race and region. We then made another bar chart looking more closely at the relationship between race and perceived attacks and how that changed over the years. We made a final visualization, which was a boxplot looking at the age distribution of the perceived attackers.
@@ -218,17 +220,13 @@ linear_reg() |>
 ```{r}
 library(ggplot2)
 
-model3 <- linear_reg() |>
-  set_engine("lm") |>
-  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1)
-
 predict_model <- police_shootings1 |>
   mutate(myPrediction = predict(model, police_shootings1)$.pred)
 
 predict_model |>
   ggplot(aes(x = threat_level_num, y = myPrediction)) +
   geom_point() +
-  labs(x = "True Body Mass", y = "Predicted Body Mass", title = "Predicted vs True Body Mass") +
+  labs(x = "True Perceived Threat Level", y = "Predicted Perceived Threat Level", title = "Predicted vs True Perceived Threat Level") +
   geom_abline(slope = 1, intercept = 0, color = "steelblue")
 ```
 
