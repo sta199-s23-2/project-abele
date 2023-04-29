@@ -1,6 +1,6 @@
 ---
-title: "Factors Influencing the Perceieved Threat of an Individual in Police Shootings in the United States"
-subtitle: "Report"
+title: "Factors Influencing Perceieved Threat in Police Violence"
+subtitle: "Investigating how race, region, and age affects the perceived threat level of an individual in a police shooting in the United States"
 format: html
 editor: visual
 execute:
