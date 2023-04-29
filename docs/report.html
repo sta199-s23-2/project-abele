@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Factors Influencing the Prevalence of Police Shootings in the United States</title>
+<title>Factors Influencing the Perceieved Threat of an Individual in Police Shootings in the United States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -175,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Factors Influencing the Prevalence of Police Shootings in the United States</h1>
+<h1 class="title">Factors Influencing the Perceieved Threat of an Individual in Police Shootings in the United States</h1>
 <p class="subtitle lead">Report</p>
 </div>
 
@@ -191,49 +191,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p><strong>Research Question:</strong> How does race, age, location, presence of mental illness, and other factors impact the prevalence of police shootings in the United States?</p>
+<p><strong>Research Question:</strong> How does race, region, and age affect the perceived threat level of an individual in a police shooting in the United States?</p>
 <p><strong>Introduction/Data</strong><br>
 Police shootings have become a pressing issue in many parts of the world, with incidents of excessive use of force by law enforcement officers making headlines and sparking widespread outrage. The consequences of police shootings can be severe, resulting in injury or death for the individuals involved and causing long-lasting trauma for their families and communities. Moreover, the use of lethal force by police can erode public trust in law enforcement and lead to social unrest, protests, and even riots. In recent years, there has been growing recognition of the urgent need to understand the root causes of police shootings and to develop effective strategies for minimizing their occurrence.&nbsp;</p>
-<p>A report by The Washington Post found that Black Americans are disproportionately impacted by police use of lethal force. Despite making up only 13% of the US population, Black Americans accounted for 24% of all people killed by police in 2020 (1). Moreover, a study by the Ruderman Family Foundation found that individuals with mental illness are also more likely to be killed by police. In fact, the report found that in some cities, such as Los Angeles, people with mental illness accounted for nearly 40% of all police shootings. Even more, according to data from the National Alliance on Mental Illness (NAMI), approximately 1 in 5 adults in the United States experiences mental illness each year; however, there are significant disparities in mental health outcomes based on race and ethnicity. For example, African Americans and Hispanic Americans are less likely to receive mental health treatment than White Americans. Additionally, research has shown that people of color are more likely to experience mental health challenges due to factors such as discrimination, trauma, and systemic racism (2).</p>
+<p>A report by The Washington Post found that Black Americans are disproportionately impacted by police use of lethal force. Despite making up only 13% of the US population, Black Americans accounted for 24% of all people killed by police in 2020 (1). Moreover, a study by the Ruderman Family Foundation found that individuals with mental illness are also more likely to be killed by police. In fact, the report found that in some cities, such as Los Angeles, people with mental illness accounted for nearly 40% of all police shootings. Even more, according to data from the National Alliance on Mental Illness (NAMI), approximately 1 in 5 adults in the United States experiences mental illness each year; however, there are significant disparities in mental health outcomes based on race and ethnicity. For example, African Americans and Hispanic Americans are less likely to receive mental health treatment than White Americans. Additionally, research has shown that people of color are more likely to experience mental health challenges due to factors such as discrimination, trauma, and systemic racism (3).</p>
 <p>Thus, with our data analysis, we wish to illuminate factors that impact the number of police shootings so that we can target and address ways to minimize the number of dangerous and fatal police shootings. With our research, we aim to answer how race, location, presence of mental illness, and other factors impact the prevalence of police shootings in the United States.</p>
 <p>For our data analysis, we are using data from the CORGIS Dataset Project collected by Dennis Kafura, Joung Min Choi, and Bo Guan. This information was gathered by the Washington post in a compilation database of every fatal shooting in the United States by a police officer in the line of duty since Jan.&nbsp;1, 2015. The post gathered the data by using local news reports, law enforcement websites, and social media, as well as monitoring independent databases. Using the data collected since 2015 until 2022, we can use it to predict trends and determine patterns for factors affecting the number of police shootings in the United States. While The Post conducted additional reporting in many cases, there is still a risk that the data may contain errors or inaccuracies. Moreover, the publication of this dataset could have negative consequences for the families and communities affected by these incidents. Despite these concerns, The Post updated the dataset in 2022 to provide additional information about the police agencies involved in each shooting, which could help measure accountability at the department level.</p>
 <p>Here are links to the Police Shootings dataset from the CORGIS Dataset and More Information on the Collected Dataset:</p>
 <p>https://think.cs.vt.edu/corgis/csv/police_shootings/</p>
 <p>https://www.washingtonpost.com/national/how-the-washington-post-is-examining-police-shootings-in-the-united-states/2016/07/07/d9c52238-43ad-11e6-8856-f26de2537a9d_story.html</p>
 <p>https://github.com/washingtonpost/data-police-shootings</p>
-<p>We hypothesize that there is a statistically significant relationship between the race of the victim, the city of the incident, perceived mental illness, and target victim for police shooting. Specifically, we hypothesize that minority races, specifically African Americans, will correlate with a higher level of perceived threat and perceived presence of a mental illness. Important variables that we will consider for our research question include the race of the victim, city as location of the incident, and whether or not the victim has a mental illness.&nbsp;</p>
-<p>We hope that our findings will encourage the urgent need to address the intersections of race, mental health, and other factors when it comes to police use of force. It is crucial that law enforcement officers receive proper training in de-escalation techniques and crisis intervention. Additionally, addressing the root causes of mental health disparities and systemic racism is necessary to prevent tragic outcomes and promote equity and justice. This research is crucial not only for protecting the lives and well-being of citizens but also for building stronger, more equitable, and more just societies. By studying police shootings and identifying ways to prevent them, we can work toward a safer, more peaceful future for all.<br>
+<p>We had three primary hypotheses. First, we hypothesized that the perceived threat level of an individual in a police shooting will be higher if the individual is a member of a racial minority group, particularly Black or Hispanic/Latinx, compared to if the individual is white. Secondly, we predicted that the perceived threat level of an individual in a police shooting will be lower if the individual is a young adult or adolescent compared to if the individual is middle-aged or older. Finally, we hypothesized that the perceived threat level of an individual in a police shooting will vary depending on the region in which the shooting takes place, with shootings in the West and Midwest regions perceived as less threatening compared to shootings in the Northeast and South regions.</p>
+<p>We hope that our findings will encourage the urgent need to address the intersections of race, age, and other factors when it comes to police use of force. It is crucial that law enforcement officers receive proper training in de-escalation techniques and crisis intervention. Additionally, addressing the root causes of mental health disparities and systemic racism is necessary to prevent tragic outcomes and promote equity and justice. This research is crucial not only for protecting the lives and well-being of citizens but also for building stronger, more equitable, and more just societies. By studying police shootings and identifying ways to prevent them, we can work toward a safer, more peaceful future for all.<br>
 </p>
-<p>References</p>
-<ol type="1">
-<li><p>DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013–2021. Race and Justice, 0(0). <a href="https://doi.org/10.1177/21533687211047943" class="uri">https://doi.org/10.1177/21533687211047943</a></p></li>
-<li><p>“The Washington Post’s Police Shootings Database.” The Washington Post, WP Company LLC, 2021, <a href="http://www.washingtonpost.com/graphics/investigations/police-shootings-database/">www.washingtonpost.com/graphics/investigations/police-shootings-database/</a>.<br>
-</p></li>
-</ol>
+<p><strong>Literature Review</strong></p>
+<p>To contextualize our research, we examined a study entitled <em>Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity</em>. This article studies the influences of race on the existence of resistant behavior in instances of deadly police contact in people who possess mental illnesses. There are many studies focusing on civilian-police conflict, but few focus on instances in which the civilian has a mental illness and the effects of that on the encounter. In this study, they utilized regression analysis amongst, drawing upon data from the Mapping Police Violence Database.</p>
+<p>Overall, they found that race was not a significant or consistent predictor of resistant behavior among civilians. For instance, Hispanic people with mental illnesses were found to be less likely than their White counterparts to attack the police before being killed. This is indicative of most current literature examining the influence of mental illness on police and civilian interactions, which sheds light on potential explanations for resistance and threat perception but still leaves many gaps to fill (2).</p>
+<p>We thought this literature would be relevant to our research question as every observation in our data set is marked as having a mental illness. We thus wanted to explore further what factors affect the threat level, or indeed the <em>perceived</em> threat level, of individuals in a shooting.</p>
 <p><strong>Methodology</strong></p>
-<ul>
-<li><p>We plan to answer our research question by visualizing the relationship between certain factors and the prevalence of police shootings on various plots whilst grouping by race. This will enable us to discern whether certain races when paired with certain factors lead to a higher or lower prevalence of police shootings.</p></li>
-<li><p>Prediction – We predict that race will have a statistically significant impact on the relationship between various factors and the prevalence of police shootings. Due to factors like racism in the criminal justice system, we hypothesize that certain races will be disproportionately more likely to be victims of police shootings.</p></li>
-<li><p>Inference – We infer that it will be more difficult to discern the disproportionality of how certain races are affected because we have yet to adjust for the proportion of each race in relation to total population.</p></li>
-</ul>
+<p>To investigate the way in which race, age, and region in police shootings impact perceived threat level, we first reorganized the data set by sorting it into different American regions and by assigning the races and threat levels different numbers so that we could turn them into numeric variables.</p>
+<p>We then created a set of visualizations to help answer our question. We first made a bar chart looking at how the perceived threat level of an individual differed by race and region. We then made another bar chart looking more closely at the relationship between race and perceived attacks and how that changed over the years. We made a final visualization, which was a boxplot looking at the age distribution of the perceived attackers.</p>
+<p>First, we modified variables to quantify the categorical variables. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.</p>
+<p>For visualizations, we aimed to create one to specifically examine and isolate the study of each one of our explanatory variables: race, region, and age. We examined perceived threat level across regions and races.</p>
+<p>Next, we utilized the calculation of summary statistics and the predict function to isolate the effects of each explanatory variable (race, region, and age) on perceived threat level. We calculated a summary statistic to estimate the true mean of each response variable. Next, using the predict function, we utilized these means to simulate an otherwise ‘average’ individual in a shooting, only changing one variable at a time. For example, we simulated each separate race in a citizen with an average age and region.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/police_shootings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(recipes)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/police_shootings.csv"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(police_shootings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(police_shootings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="ot">&lt;-</span> police_shootings <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ME"</span>, <span class="st">"VT"</span>, <span class="st">"NH"</span>, <span class="st">"MA"</span>, <span class="st">"RI"</span>, <span class="st">"CT"</span>, <span class="st">"NY"</span>, <span class="st">"PA"</span>, <span class="st">"NJ"</span>) <span class="sc">~</span> <span class="st">"Northeast"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"WI"</span>, <span class="st">"MI"</span>, <span class="st">"IL"</span>, <span class="st">"IN"</span>, <span class="st">"OH"</span>, <span class="st">"ND"</span>, <span class="st">"SD"</span>, <span class="st">"NE"</span>, <span class="st">"KS"</span>, <span class="st">"MN"</span>, <span class="st">"IA"</span>, <span class="st">"MO"</span>) <span class="sc">~</span> <span class="st">"Midwest"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"MT"</span>, <span class="st">"ID"</span>, <span class="st">"WY"</span>, <span class="st">"CO"</span>, <span class="st">"NM"</span>, <span class="st">"AZ"</span>, <span class="st">"UT"</span>, <span class="st">"NV"</span>, <span class="st">"CA"</span>, <span class="st">"OR"</span>, <span class="st">"WA"</span>, <span class="st">"AK"</span>, <span class="st">"HI"</span>) <span class="sc">~</span> <span class="st">"West"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"TX"</span>, <span class="st">"OK"</span>, <span class="st">"AR"</span>, <span class="st">"LA"</span>, <span class="st">"MS"</span>, <span class="st">"AL"</span>, <span class="st">"TN"</span>, <span class="st">"KY"</span>, <span class="st">"GA"</span>, <span class="st">"FL"</span>, <span class="st">"SC"</span>, <span class="st">"NC"</span>, <span class="st">"VA"</span>, <span class="st">"WV"</span>, <span class="st">"MD"</span>, <span class="st">"DE"</span>, <span class="st">"DC"</span>) <span class="sc">~</span> <span class="st">"South"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race_num =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"White"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Black"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Hispanic"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Asian"</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Native American"</span> <span class="sc">~</span> <span class="dv">5</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">region_num =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(region)),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">threat_level_num =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"unknown"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"undetermined"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"attack"</span> <span class="sc">~</span> <span class="dv">4</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Person.Age<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Person.Age, <span class="at">color =</span> Person.Race)) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship Between Victim Age, Race, and Prevalence of Police </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">       Shooting"</span>, <span class="at">x=</span> <span class="st">"Victim Age"</span>, <span class="at">y =</span> <span class="st">"Number of Reported Shootings"</span>, </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="st">"Race"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">fill =</span> <span class="fu">as.factor</span>(race_num))) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"stack"</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Perceived Threat Level by Race and Region"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Region"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Race"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name =</span> <span class="st">"Race"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Hispanic"</span>, <span class="st">"Asian"</span>, <span class="st">"Native American"</span>)) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(threat_level_num <span class="sc">==</span> <span class="dv">2</span>, <span class="st">"Undetermined"</span>, <span class="fu">ifelse</span>(threat_level_num <span class="sc">==</span> <span class="dv">3</span>, <span class="st">"Other"</span>, <span class="fu">ifelse</span>(threat_level_num <span class="sc">==</span> <span class="dv">4</span>, <span class="st">"Attack"</span>, <span class="cn">NA</span>)))), <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/age-prevalence-1.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/visualization-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -248,78 +277,211 @@ Police shootings have become a pressing issue in many parts of the world, with i
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(recipes)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'modelr'</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> race_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:yardstick':
-
-    mae, mape, rmse</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:broom':
-
-    bootstrap</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(recipes)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelr)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> police_shootings <span class="sc">|&gt;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ME"</span>, <span class="st">"VT"</span>, <span class="st">"NH"</span>, <span class="st">"MA"</span>, <span class="st">"RI"</span>, <span class="st">"CT"</span>, <span class="st">"NY"</span>, <span class="st">"PA"</span>, <span class="st">"NJ"</span>) <span class="sc">~</span> <span class="st">"Northeast"</span>,</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"WI"</span>, <span class="st">"MI"</span>, <span class="st">"IL"</span>, <span class="st">"IN"</span>, <span class="st">"OH"</span>, <span class="st">"ND"</span>, <span class="st">"SD"</span>, <span class="st">"NE"</span>, <span class="st">"KS"</span>, <span class="st">"MN"</span>, <span class="st">"IA"</span>, <span class="st">"MO"</span>) <span class="sc">~</span> <span class="st">"Midwest"</span>,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"MT"</span>, <span class="st">"ID"</span>, <span class="st">"WY"</span>, <span class="st">"CO"</span>, <span class="st">"NM"</span>, <span class="st">"AZ"</span>, <span class="st">"UT"</span>, <span class="st">"NV"</span>, <span class="st">"CA"</span>, <span class="st">"OR"</span>, <span class="st">"WA"</span>, <span class="st">"AK"</span>, <span class="st">"HI"</span>) <span class="sc">~</span> <span class="st">"West"</span>,</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    Incident.Location.State <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"TX"</span>, <span class="st">"OK"</span>, <span class="st">"AR"</span>, <span class="st">"LA"</span>, <span class="st">"MS"</span>, <span class="st">"AL"</span>, <span class="st">"TN"</span>, <span class="st">"KY"</span>, <span class="st">"GA"</span>, <span class="st">"FL"</span>, <span class="st">"SC"</span>, <span class="st">"NC"</span>, <span class="st">"VA"</span>, <span class="st">"WV"</span>, <span class="st">"MD"</span>, <span class="st">"DE"</span>, <span class="st">"DC"</span>) <span class="sc">~</span> <span class="st">"South"</span>,</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race_num =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"White"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Black"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Hispanic"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Asian"</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    Person.Race <span class="sc">==</span> <span class="st">"Native American"</span> <span class="sc">~</span> <span class="dv">5</span>),</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">region_num =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(region)),</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">threat_level_num =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"unknown"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"undetermined"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">Factors.Threat-Level</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"attack"</span> <span class="sc">~</span> <span class="dv">4</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co"># fit linear regression model</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> race_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings) <span class="sc">|&gt;</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co"># display model coefficients</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 5
-  term        estimate std.error statistic p.value
-  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 (Intercept)  3.62     0.0374       96.9  0      
-2 race_num    -0.0266   0.00816      -3.26 0.00114
-3 Person.Age   0.00199  0.000614      3.25 0.00118
-4 region_num  -0.0145   0.00827      -1.75 0.0801 </code></pre>
-</div>
-</div>
-<p><span class="math inline">\(\widehat{threat\_level\_num} = 1.377 + 0.0266 * race\_num - 0.0019927 * Person.Age + 0.01447 * region\_num\)</span></p>
-<p>threat_level_num: {1 if unnkown; 2 if undetermined; 3 if other; 4 if attack}</p>
+<p><span class="math inline">\(\widehat{threat\_level\_num} = 3.6231 - 0.0266 * race\_num - 0.0019927 * Person.Age - 0.01447 * region\_num\)</span></p>
+<p>threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}</p>
 <p>region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}</p>
 <p>race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}</p>
-<p><strong>Results</strong><br>
-</p>
-<p>We are investigating and determining which of these factors (race, age, location, presence of mental illness) has the most impact on shootings in the United States.</p>
-<p>Graph interpretation: The first graph shows the correlation between victim age and number of reported shootings. Victims who are between the ages of 25-37 years appear to experience the highest prevalence of police shootings. Indeed, the number of people between these ages are significantly more affected than people older and younger, indicating that age is an important factor. However, across the whole spectrum of ages, it is also clear that people of African American race are more disproportionately affected, suggesting that race is also a significant factor in determining the prevalence of police shootings.</p>
-<p>Graph 2: In our second graph we investigated the relationship between race and shootings more specifically. Just as our last graph indicated, African Americans are significantly affected more by police shootings than any other race, having approximately 1000 shootings per year between 2015-2020. In addition, Asians were not too far behind with 750 shootings per year. It is also worth noting that the total number of shootings fell significantly in 2021, and this was likely in reaction to the Black Lives Matter movement. The number of African Americans who experience police shootings fell most dramatically - this makes sense given that the movement surrounded around the biased shootings towards African Americans. This all suggests that race is a very significant factor in police shootings, more so than age.</p>
-<p>Graph 3: The third graph demonstrates that location is a crucial factor when it comes to shootings. White people from the states CO, CT and DC are on average more prone to be targets. IL, ID and IA are also significant states where shootings occur.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>police_shootings2 <span class="ot">&lt;-</span> police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">fleeing_num =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    Factors.Fleeing <span class="sc">==</span> <span class="st">"Other"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    Factors.Fleeing <span class="sc">==</span> <span class="st">"Not fleeing"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    Factors.Fleeing <span class="sc">==</span> <span class="st">"Foot"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    Factors.Fleeing <span class="sc">==</span> <span class="st">"Car"</span> <span class="sc">~</span> <span class="dv">4</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> fleeing_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
+
+
+Call:
+stats::lm(formula = threat_level_num ~ fleeing_num + Person.Age + 
+    region_num, data = data)
+
+Coefficients:
+(Intercept)  fleeing_num   Person.Age   region_num  
+   3.635346     0.001953     0.001736    -0.024324  </code></pre>
+</div>
+</div>
+<p><span class="math inline">\(\widehat{threat\_level\_num} = 3.635346 - 0.001953 * fleeing\_num - 0.001736 * Person.Age - 0.024324 * region\_num\)</span></p>
+<p>threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}</p>
+<p>region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}</p>
+<p>fleeing_num: {1 if other; 2 if not fleeing; 3 if foot; 4 if car}</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> race_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings1) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glance</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(AIC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6806.318</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(threat_level_num <span class="sc">~</span> fleeing_num <span class="sc">+</span> Person.Age <span class="sc">+</span> region_num, <span class="at">data =</span> police_shootings2) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glance</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(AIC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9528.969</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_race =</span> <span class="fu">mean</span>(race_num, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_race
+      &lt;dbl&gt;
+1      1.67</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Person.Age, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_age
+     &lt;dbl&gt;
+1     35.4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_region =</span> <span class="fu">mean</span>(region_num, <span class="at">na.rm =</span> T)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_region
+        &lt;dbl&gt;
+1        2.96</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>police_shootings1 <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_threatlvl =</span> <span class="fu">mean</span>(threat_level_num, <span class="at">na.rm =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_threatlvl
+           &lt;dbl&gt;
+1           3.61</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">1</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.62</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">2</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.60</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">3</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.57</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">4</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.54</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="dv">5</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.52</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">25</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.59</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">35</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.61</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="dv">45</span>, <span class="at">region_num =</span> <span class="fl">2.960725</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.63</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.63</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.62</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.61</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">race_num =</span> <span class="fl">1.670755</span>, <span class="at">Person.Age =</span> <span class="fl">35.38469</span>, <span class="at">region_num =</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  .pred
+  &lt;dbl&gt;
+1  3.59</code></pre>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<p><strong>Results</strong></p>
+<p>First, we will discuss interpretations of our three visualizations.</p>
+<p>The first graph ___</p>
+<p>The second graph shows the correlation between victim age and number of reported shootings. Victims who are between the ages of 25-37 years appear to experience the highest prevalence of police shootings. Indeed, the number of people between these ages are significantly more affected than people older and younger, indicating that age is an important factor. However, across the whole spectrum of ages, it is also clear that people of African American race are more disproportionately affected, suggesting that race is also a significant factor in determining the prevalence of police shootings.</p>
+<p>In our third graph, we investigated the relationship between race and shootings more specifically. Just as our last graph indicated, African Americans are significantly affected more by police shootings than any other race, having approximately 1000 shootings per year between 2015-2020. In addition, Asians were not too far behind with 750 shootings per year. It is also worth noting that the total number of shootings fell significantly in 2021, and this was likely in reaction to the Black Lives Matter movement. The number of African Americans who experience police shootings fell most dramatically - this makes sense given that the movement surrounded around the biased shootings towards African Americans. This all suggests that race is a very significant factor in police shootings, more so than age.</p>
+<p>Next, we investigated the individual effects of each variable, utilizing the predict function. Our predict model investigating race produced fairly inconclusive results, but this can in part be explained by the disproportionate racial population distribution. The perceived threat levels were all fairly similar, with 3.62426 for White, 3.597684 for Black, 3.571108 for Hispanic, 3.544532 for Asian, and 3.517956 for Hispanic. However, when we consider sample sizes differences due to discrepancies in population, this highlights that we do not conclude that White people are more likely to be perceived as a threat than racial minorities.</p>
+<p>Next, we investigated age, employing an average race and region numeric value to hold those factors constant. I based test ages around the mean, which was 35, utilizing 25, 35, and 45. We found a consistent increase in perceived threat level alongside age, increasing from 3.58574 at 25, to 3.605667 at 35, to 3.625595 at 45.</p>
+<p>Finally, we investigated region, holding race and age constant. Though the numbers were fairly consistent, we found individuals in the West and South to be the least likely to be perceived as a threat, with levels of 3.591395 and 3.605866 respectively. Individuals from the Midwest and Northeast were most likely to be perceived as a threat, with levels of 3.634807 and 3.620336 respectively.</p>
+<p><strong>Discussion</strong></p>
+<p>References</p>
+<ol type="1">
+<li><p>DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013–2021. Race and Justice, 0(0). <a href="https://doi.org/10.1177/21533687211047943" class="uri">https://doi.org/10.1177/21533687211047943</a></p></li>
+<li><p>Prince, K. J., &amp; Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77–96. <a href="https://doi.org/10.1177/10887679221119397" class="uri">https://doi.org/10.1177/10887679221119397</a>&nbsp;</p></li>
+<li><p>“The Washington Post’s Police Shootings Database.” The Washington Post, WP Company LLC, 2021, <a href="http://www.washingtonpost.com/graphics/investigations/police-shootings-database/">www.washingtonpost.com/graphics/investigations/police-shootings-database/</a>.<br>
+</p></li>
+</ol>
 
 
 

@@ -42,9 +42,9 @@ We thought this literature would be relevant to our research question as every o
 
 To investigate the way in which race, age, and region in police shootings impact perceived threat level, we first reorganized the data set by sorting it into different American regions and by assigning the races and threat levels different numbers so that we could turn them into numeric variables.
 
-We then
+We then created a set of visualizations to help answer our question. We first made a bar chart looking at how the perceived threat level of an individual differed by race and region. We then made another bar chart looking more closely at the relationship between race and perceived attacks and how that changed over the years. We made a final visualization, which was a boxplot looking at the age distribution of the perceived attackers.
 
-constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
+First, we modified variables to quantify the categorical variables. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
 
 For visualizations, we aimed to create one to specifically examine and isolate the study of each one of our explanatory variables: race, region, and age. We examined perceived threat level across regions and races.
 
@@ -59,6 +59,8 @@ library(recipes)
 library(modelr)
 
 police_shootings <- read_csv("data/police_shootings.csv")
+
+view(police_shootings)
 
 ```
 
@@ -123,10 +125,7 @@ police_shootings |>
 
 model <- linear_reg() |>
   set_engine("lm") |>
-  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) 
-
-model
-
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1)
 
 ```
 
@@ -137,6 +136,43 @@ threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}
 region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
 
 race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}
+
+```{r}
+police_shootings2 <- police_shootings1 |>
+   mutate(fleeing_num = case_when(
+    Factors.Fleeing == "Other" ~ 1,
+    Factors.Fleeing == "Not fleeing" ~ 2,
+    Factors.Fleeing == "Foot" ~ 3,
+    Factors.Fleeing == "Car" ~ 4))
+
+linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ fleeing_num + Person.Age + region_num, data = police_shootings2)
+```
+
+$\widehat{threat\_level\_num} = 3.635346 - 0.001953 * fleeing\_num - 0.001736 * Person.Age - 0.024324 * region\_num$
+
+threat_level_num: {1 if unknown; 2 if undetermined; 3 if other; 4 if attack}
+
+region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
+
+fleeing_num: {1 if other; 2 if not fleeing; 3 if foot; 4 if car}
+
+```{r}
+linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) |>
+  glance() |>
+  pull(AIC)
+```
+
+```{r}
+linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ fleeing_num + Person.Age + region_num, data = police_shootings2) |>
+  glance() |>
+  pull(AIC)
+```
 
 ```{r}
 #| label: sum-stat-race
@@ -191,6 +227,10 @@ predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num
 predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 2))
 predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 3))
 predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num = 4))
+
+```
+
+```{r}
 
 ```
 
