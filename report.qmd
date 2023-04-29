@@ -36,6 +36,8 @@ To contextualize our research, we examined a study entitled *Examining Individua
 
 Overall, they found that race was not a significant or consistent predictor of resistant behavior among civilians. For instance, Hispanic people with mental illnesses were found to be less likely than their White counterparts to attack the police before being killed. This is indicative of most current literature examining the influence of mental illness on police and civilian interactions, which sheds light on potential explanations for resistance and threat perception but still leaves many gaps to fill (2).
 
+We thought this literature would be relevant to our research question as every observation in our data set is marked as having a mental illness. We thus wanted to explore further what factors affect the threat level, or indeed the *perceived* threat level, of individuals in a shooting.
+
 **Methodology**
 
 To investigate the way in which race, age, and region in police shootings impact perceieved threat level, we constructed a linear regression model. First, we modified variables to more accurately depict correlations. We mutated race to be a numeric variable (1 = White, 2 = Black, 3 = Hispanic, 4 = Asian, 5 = Native American). We grouped states by regions and subsequently mutating it to be numeric (1 = Midwest, 2 = Northeast, 3 = South, 4 = West). Finally, we mutated perceived threat level to be numeric (1 = unknown, 2 = undetermined, 3 = other, 4 = attack). We fit the linear regression to encompass region, race, and age as explanatory variables and threat level as a response.
