@@ -34,7 +34,7 @@ We hope that our findings will encourage the urgent need to address the intersec
 
 To contextualize our research, we examined a study entitled *Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity*. This article studies the influences of race on the existence of resistant behavior in instances of deadly police contact in people who possess mental illnesses. There are many studies focusing on civilian-police conflict, but few focus on instances in which the civilian has a mental illness and the effects of that on the encounter. In this study, they utilized regression analysis amongst, drawing upon data from the Mapping Police Violence Database.
 
-Overall, they found that race was not a significant or consistent predictor of resistant behavior among civilians. For instance, Hispanic people with mental illnesses were found to be less likely than their White counterparts to attack the police before being killed. This is indicative of most current literature examining the influence of mental illness on police and civilian interactions, which sheds light on potential explanations for resistance and threat perception but still leaves many gaps to fill (2).
+Overall, they found that race was not a significant or consistent predictor of resistant behavior among civilians. For instance, Hispanic people with mental illnesses were found to be less likely than their White counterparts to attack the police before being killed. This is indicative of most current literature examining the influence of mental illness on police and civilian interactions, which sheds light on potential explanations for resistance and threat perception but still leaves many gaps to fill (3).
 
 We thought this literature would be relevant to our research question as every observation in our data set is marked as having a mental illness. We thus wanted to explore further what factors affect the threat level, or indeed the *perceived* threat level, of individuals in a shooting.
 
@@ -92,7 +92,7 @@ police_shootings1 <- police_shootings |>
 
 ```
 
-**Visualizations**
+***Visualizations***
 
 ```{r}
 #| label: visualization
@@ -136,7 +136,7 @@ police_shootings1 |>
 
 ```
 
-**Linear Regression Model**
+***Linear Regression Model***
 
 ```{r}
 #| label: linear-reg-police_shootings1
@@ -292,7 +292,7 @@ predict(model, data.frame(race_num = 1.670755, Person.Age = 35.38469, region_num
 
 **Results**
 
-First, we will discuss interpretations of our three visualizations.
+First, we will discuss interpretations of our four visualizations.
 
 Our first visualization shows that nearly 2000 perceived attacks took place in the South and nearly 1500 of the perceived attacks took place in the West. This second detail was surprising to us, especially in tandem with the very low numbers of perceived attacks in the Northeast. We had hypothesized greater rates of perceived attacks in the Northeast given that Northeastern cities like New York and Baltimore are big crimes cities. This may, however, reflect the size of the West.
 
@@ -302,9 +302,9 @@ In our second visualization, we explored the relationship between race and perce
 
 Our third visualization showed which ages are more likely to be perceived as a threat. Unsurprisingly, the interquartile range of perceived threats was between 25-45 and much of the older threats were counted as outliers. Given that people of ages 25-45 are more able-bodied, it makes sense that they would be perceived as more threatening. Thus, age too is an important factor in determining threat level.
 
-But visualizations are not the most accurate way of answering our question. We therefore looked to further methods.
-
 Our visualization comparing the true perceived threat level and the predicted perceived threat level reveals that most of the perceived threat levels for our model appear to occur around 3-4, which means they are between undetermined and attack. This makes sense with our data because most of the observations in the dataset are "undetermined" and "attack" observations. Furthermore, the true perceived threat level points appear at fixed levels, at 2, 3, and 4 because those were categorical variables manipulated to numeric variables. Thus, we would not visualize any data points in between 2, 3, and 4 because they are fixed values at those integers.
+
+But visualizations are not the most accurate way of answering our question. We therefore looked to further methods.
 
 Next, we investigated the individual effects of each variable, utilizing the predict function. Our predict model investigating race produced fairly inconclusive results, but this can in part be explained by the disproportionate racial population distribution. The perceived threat levels were all fairly similar, with 3.62426 for White, 3.597684 for Black, 3.571108 for Hispanic, 3.544532 for Asian, and 3.517956 for Hispanic. However, when we consider sample sizes differences due to discrepancies in population, this highlights that we do not conclude that White people are more likely to be perceived as a threat than racial minorities.
 
@@ -326,6 +326,8 @@ References
 
 1.  DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013--2021. Race and Justice, 0(0). <https://doi.org/10.1177/21533687211047943>
 
-2.  Prince, K. J., & Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77--96. <https://doi.org/10.1177/10887679221119397> 
+2.  Kafura, D. (2021). Police shootings CSV file. CORGIS Datasets Project. Retrieved April 28, 2023, from https://think.cs.vt.edu/corgis/csv/police_shootings/
 
-3.  "The Washington Post's Police Shootings Database." The Washington Post, WP Company LLC, 2021, [www.washingtonpost.com/graphics/investigations/police-shootings-database/](http://www.washingtonpost.com/graphics/investigations/police-shootings-database/).\
+3.  Prince, K. J., & Sun, I. Y. (2023). Examining Individual and Aggregate Correlates of Police Killings of People with Mental Illness: A Special Gaze at Race and Ethnicity. Homicide Studies, 27(1), 77--96. <https://doi.org/10.1177/10887679221119397> 
+
+4.  "The Washington Post's Police Shootings Database." The Washington Post, WP Company LLC, 2021, [www.washingtonpost.com/graphics/investigations/police-shootings-database/](http://www.washingtonpost.com/graphics/investigations/police-shootings-database/).\
