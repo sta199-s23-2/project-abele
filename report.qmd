@@ -222,6 +222,8 @@ Next, we investigated age, employing an average race and region numeric value to
 
 Finally, we investigated region, holding race and age constant. Though the numbers were fairly consistent, we found individuals in the West and South to be the least likely to be perceived as a threat, with levels of 3.591395 and 3.605866 respectively. Individuals from the Midwest and Northeast were most likely to be perceived as a threat, with levels of 3.634807 and 3.620336 respectively.
 
+**Discussion**
+
 References
 
 1.  DeAngelis, R. T. (2021). Systemic Racism in Police Killings: New Evidence From the Mapping Police Violence Database, 2013--2021. Race and Justice, 0(0). <https://doi.org/10.1177/21533687211047943>
