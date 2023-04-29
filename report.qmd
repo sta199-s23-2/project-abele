@@ -137,7 +137,7 @@ police_shootings1 |>
 **Linear Regression Model**
 
 ```{r}
-#| label: linear-reg
+#| label: linear-reg-police_shootings1
 
 model <- linear_reg() |>
   set_engine("lm") |>
@@ -156,6 +156,7 @@ region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
 race_num: {1 if White; 2 if Black; 3 if Hispanic; 4 if Asian; 5 if Native American}
 
 ```{r}
+#| label: linear-reg-police_shootings2
 police_shootings2 <- police_shootings1 |>
    mutate(fleeing_num = case_when(
     Factors.Fleeing == "Other" ~ 1,
@@ -177,6 +178,7 @@ region_num: {1 if Midwest; 2 if Northeast; 3 if South; 4 if West}
 fleeing_num: {1 if other; 2 if not fleeing; 3 if foot; 4 if car}
 
 ```{r}
+#| label: AIC-police_shootings1
 linear_reg() |>
   set_engine("lm") |>
   fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) |>
@@ -185,11 +187,30 @@ linear_reg() |>
 ```
 
 ```{r}
+#| label: AIC-police_shootings2
 linear_reg() |>
   set_engine("lm") |>
   fit(threat_level_num ~ fleeing_num + Person.Age + region_num, data = police_shootings2) |>
   glance() |>
   pull(AIC)
+```
+
+```{r}
+#| label: adj.r.squared-police_shootings1
+linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ race_num + Person.Age + region_num, data = police_shootings1) |>
+  glance() |>
+  pull(adj.r.squared)
+```
+
+```{r}
+#| label: adj.r.squared-police_shootings2
+linear_reg() |>
+  set_engine("lm") |>
+  fit(threat_level_num ~ fleeing_num + Person.Age + region_num, data = police_shootings2) |>
+  glance() |>
+  pull(adj.r.squared)
 ```
 
 ```{r}
